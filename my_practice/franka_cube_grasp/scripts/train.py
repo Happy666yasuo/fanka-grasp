@@ -72,7 +72,13 @@ from isaaclab_rl.sb3 import Sb3VecEnvWrapper
 
 # Our project modules
 import envs  # noqa: F401 — triggers gym.register
-from envs.franka_grasp_env_cfg import FrankaGraspEnvCfg
+from envs.franka_grasp_env_cfg import (
+    FrankaGraspEnvCfg,
+    RewardsCfg,
+    SparseRewardsCfg,
+    ShapedRewardsCfg,
+    PBRSRewardsCfg,
+)
 from agents.sac_cfg import SACConfig
 
 
@@ -185,8 +191,18 @@ def main() -> None:
     cfg.scene.num_envs = args_cli.num_envs
     cfg.seed = args_cli.seed
 
-    # TODO (Phase 3): Switch reward weights based on args_cli.reward_type
-    # For now, we always use the default rewards from FrankaGraspEnvCfg
+    # -- Switch reward config based on reward_type --
+    reward_map = {
+        "sparse": SparseRewardsCfg,
+        "shaped": ShapedRewardsCfg,
+        "pbrs": PBRSRewardsCfg,
+    }
+    if args_cli.reward_type in reward_map:
+        cfg.rewards = reward_map[args_cli.reward_type]()
+        print(f"[INFO] Using reward config: {type(cfg.rewards).__name__}")
+    else:
+        # Default: keep the original dense+sparse RewardsCfg
+        print(f"[INFO] Using default RewardsCfg")
 
     env = ManagerBasedRLEnv(cfg=cfg)
 

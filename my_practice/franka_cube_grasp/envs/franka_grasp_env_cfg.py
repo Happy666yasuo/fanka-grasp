@@ -266,6 +266,90 @@ class RewardsCfg:
     )
 
 
+# -- Phase 3: Alternative reward configurations --
+
+
+@configclass
+class SparseRewardsCfg:
+    """Sparse-only rewards (baseline for ablation studies).
+
+    Only rewards the agent for successfully lifting the object.
+    Small penalties for action rate and joint velocities.
+    """
+
+    lifting_object = RewTerm(
+        func=mdp.object_is_lifted,
+        params={"minimal_height": 0.06},
+        weight=15.0,
+    )
+
+    action_rate = RewTerm(func=mdp.action_rate_l2, weight=-1e-4)
+    joint_vel = RewTerm(
+        func=mdp.joint_vel_l2,
+        weight=-1e-4,
+        params={"asset_cfg": SceneEntityCfg("robot")},
+    )
+
+
+@configclass
+class ShapedRewardsCfg:
+    """Multi-stage shaped reward (Phase 3 — shaped strategy).
+
+    Combines the shaped_multi_stage function with action penalties.
+    The multi-stage function internally computes reach + grasp + lift + hold.
+    """
+
+    shaped = RewTerm(
+        func=mdp.shaped_multi_stage,
+        params={
+            "reach_std": 0.1,
+            "grasp_threshold": 0.02,
+            "lift_target": 0.2,
+            "lift_std": 0.1,
+        },
+        weight=1.0,
+    )
+
+    # Penalties
+    action_rate = RewTerm(func=mdp.action_rate_l2, weight=-1e-4)
+    joint_vel = RewTerm(
+        func=mdp.joint_vel_l2,
+        weight=-1e-4,
+        params={"asset_cfg": SceneEntityCfg("robot")},
+    )
+
+
+@configclass
+class PBRSRewardsCfg:
+    """Potential-Based Reward Shaping (Phase 3 — PBRS strategy).
+
+    Sparse lift reward + PBRS shaping term (F = gamma*Phi(s') - Phi(s)).
+    Preserves optimal policy under the original sparse reward.
+    """
+
+    # Sparse base reward
+    lifting_object = RewTerm(
+        func=mdp.object_is_lifted,
+        params={"minimal_height": 0.06},
+        weight=15.0,
+    )
+
+    # PBRS shaping term
+    pbrs = RewTerm(
+        func=mdp.pbrs_shaping,
+        params={"gamma": 0.99},
+        weight=5.0,
+    )
+
+    # Penalties
+    action_rate = RewTerm(func=mdp.action_rate_l2, weight=-1e-4)
+    joint_vel = RewTerm(
+        func=mdp.joint_vel_l2,
+        weight=-1e-4,
+        params={"asset_cfg": SceneEntityCfg("robot")},
+    )
+
+
 # ============================================================================
 # MDP — Terminations
 # ============================================================================

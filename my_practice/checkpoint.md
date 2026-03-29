@@ -103,3 +103,38 @@
     - Mean Ep Length: 250.0 (全部超时)
     - Success Rate: 0.0% (预期：稀疏奖励 + 仅 1000 步 → 不收敛)
 - **回退命令**: `git checkout cp-2-sac-baseline`
+
+### CP-3: Reward Shaping — 三种奖励策略
+- **时间**: 2026-03-29 18:50
+- **Git Tag**: cp-3-reward-shaping
+- **Commit**: ff96763
+- **分支**: franka-grasp
+- **状态**: ✅ 通过
+- **内容**:
+  - 扩展 `envs/mdp/rewards.py`: 新增 3 个高级奖励函数
+    - `shaped_multi_stage`: 4 阶段密集奖励 (reach → grasp → lift → hold), 加权组合
+    - `pbrs_shaping`: Potential-Based Reward Shaping (F = γΦ(s') - Φ(s)), 保留最优策略
+    - `curriculum_reward`: 课程学习奖励 (easy/medium/hard 三级, 按 step 数切换)
+  - 扩展 `envs/franka_grasp_env_cfg.py`: 新增 3 种 RewardsCfg
+    - `SparseRewardsCfg`: 纯稀疏奖励 (消融基线)
+    - `ShapedRewardsCfg`: shaped_multi_stage + penalties
+    - `PBRSRewardsCfg`: sparse lift + PBRS shaping + penalties
+  - 更新 `scripts/train.py`: 实现 --reward_type 奖励配置切换
+    - 替换 TODO → reward_map 字典映射 sparse/shaped/pbrs → 对应 RewardsCfg
+  - 新建 `scripts/check_reward_range.py`: 奖励范围诊断工具
+    - 随机动作跑 N 步, 报告 min/max/mean/std/NaN/Inf
+    - 逐 reward term 细分报告 (使用 reward_manager._step_reward)
+    - 健康度评估 (范围过大/过小/NaN 警告)
+- **验证**:
+  - V3-1: 4 个 .py 文件全部 py_compile 通过 ✅
+  - V3-2: shaped 训练 1000 步 (4 envs, headless) ✅
+    - RewardManager 正确加载: shaped(1.0) + action_rate(-1e-4) + joint_vel(-1e-4)
+    - 生成 latest.zip + policy.onnx
+  - V3-3: PBRS 训练 1000 步 (4 envs, headless) ✅
+    - RewardManager 正确加载: lifting_object(15.0) + pbrs(5.0) + action_rate(-1e-4) + joint_vel(-1e-4)
+    - 生成 latest.zip + policy.onnx
+  - V3-4: check_reward_range.py (shaped, 200 步, 4 envs) ✅
+    - Total: min=-0.000086, max=0.000706, mean=0.000029 — 无 NaN/Inf
+    - Per-term: shaped [0, 0.0388], action_rate [-0.0021, -0.0001], joint_vel [-0.0039, -0.0004]
+    - 低幅值 (随机动作预期行为) — 正式训练中 shaped 会因策略改善而增大
+- **回退命令**: `git checkout cp-3-reward-shaping`

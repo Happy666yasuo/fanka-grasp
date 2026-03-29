@@ -1,0 +1,32 @@
+用Tracking-Flat-G1-Wo-State-Estimation-v0训练（154维度）的脚本：
+
+python scripts/csv_to_npz_with_Interpolation.py --input_file '/home/happywindman/Desktop/beyondmimic/my_dance_zui.csv' --output_name my_dance_zui.npz
+
+python scripts/replay_npz.py --motion_file /home/happywindman/Desktop/beyondmimic/whole_body_tracking/motions/my_dance_zui.npz
+
+
+python scripts/rsl_rl/train.py \
+    --task Tracking-Flat-G1-Wo-State-Estimation-v0 \
+    --motion_file /home/happywindman/Desktop/beyondmimic/whole_body_tracking/motions/my_dance_zui.npz \
+    --num_envs 1024 \
+    --max_iterations 50001 \
+    --resume True \
+    --load_run 2026-03-12_12-40-30 \
+    --checkpoint model_50000.pt \
+    --headless
+
+num_envs 2048每次迭代时间是1024的2倍，所以从效率上来说，1024=2048
+而1024是512的1.5-1.6倍率，所以1024>512---->最好选择1024
+
+
+tensorboard --logdir logs/rsl_rl
+
+
+
+python scripts/rsl_rl/play.py \
+    --task Tracking-Flat-G1-Wo-State-Estimation-v0 \
+    --motion_file /home/happywindman/Desktop/beyondmimic/whole_body_tracking/motions/my_dance_zui.npz \
+    --num_envs 1 \
+    --video \
+    --video_length 1000 \
+
