@@ -42,3 +42,32 @@
   - 创建 `.gitignore` 排除 isaacgym 等大目录
 - **验证**: V0-1 ~ V0-5 全部通过, smoke_test.py 输出 "ALL CHECKS PASSED ✅"
 - **回退命令**: `git checkout cp-0-env-init`
+
+### CP-1: 场景与环境配置
+- **时间**: 2026-03-29 18:10
+- **Git Tag**: cp-1-scene-setup
+- **Commit**: 34ec480
+- **分支**: franka-grasp
+- **状态**: ✅ 通过
+- **内容**:
+  - 完整阅读官方 Lift 任务源码 (lift_env_cfg.py, joint_pos_env_cfg.py, franka.py, mdp/*)
+  - 编写 `envs/mdp/observations.py`: 3 个自定义观测函数 (object_pos, ee_pos, ee_object_rel)
+  - 编写 `envs/mdp/rewards.py`: 3 个奖励函数 (sparse lift, dense reach, goal tracking)
+  - 编写 `envs/mdp/terminations.py`: 1 个终止条件 (object_dropped_below_table)
+  - 编写 `envs/mdp/__init__.py`: 重导出所有 MDP 函数
+  - 编写 `envs/franka_grasp_env_cfg.py`: 完整场景 + MDP 配置
+    - FrankaGraspSceneCfg: Franka Panda + table + cube + EE frame + ground + light
+    - FrankaGraspEnvCfg: obs(32D) + action(8D) + 5 reward terms + 2 terminations + 2 events
+    - 使用 AppLauncher 标准启动模式
+  - 编写 `envs/__init__.py`: gymnasium 环境注册 (Isaac-Grasp-Cube-Franka-v0)，使用字符串引用避免提前导入
+  - 重写 `scripts/smoke_test.py`: Phase 1 版本，AppLauncher 启动 + 环境实例化 + 随机 rollout
+- **验证**:
+  - V1-1: 12 个 .py 文件全部 py_compile 通过 ✅
+  - V1-2: headless, 2 envs, 50 步随机 rollout ✅
+    - obs_space: `Dict('policy': Box(-inf, inf, (2, 32), float32))`
+    - act_space: `Box(-inf, inf, (2, 8), float32)`
+    - Observation: joint_pos(9) + joint_vel(9) + object_pos(3) + ee_object_rel(3) + actions(8) = 32D
+    - Action: arm(7) + gripper(1) = 8D
+    - Reward: reaching(1.0) + lifting(15.0) + goal_tracking(10.0) + action_rate(-1e-4) + joint_vel(-1e-4)
+    - "ALL CHECKS PASSED ✅"
+- **回退命令**: `git checkout cp-1-scene-setup`
