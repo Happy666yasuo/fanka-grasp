@@ -36,15 +36,11 @@ checkpoints/*.pt
 Thumbs.db
 
 # ===== Large directories not part of franka-grasp project =====
-beyondmimic/isaacgym/
-beyondmimic/rsl_rl/
-beyondmimic/unitree_rl_gym/
-beyondmimic/unitree_sdk2_python/
-beyondmimic/whole_body_tracking/
-beyondmimic/codes&datasets/
-beyondmimic/Beyondmimic_Deploy_G1/
-beyondmimic/*.csv
-beyondmimic/*.pdf
+beyondmimic/
+hello.txt
+
+# ===== PDF / binary docs =====
+*.pdf
 
 # ===== Conda / venv =====
 .venv/
