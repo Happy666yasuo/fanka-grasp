@@ -1,0 +1,51 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+*.so
+
+# ===== Training artifacts =====
+*.onnx
+*.pt
+*.pth
+*.zip
+*.npz
+logs/tb_logs/
+logs/wandb/
+checkpoints/*.zip
+checkpoints/*.pt
+
+# ===== IsaacSim / IsaacLab =====
+*.usd
+*.usda
+*.usdc
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Large directories not part of franka-grasp project =====
+beyondmimic/isaacgym/
+beyondmimic/rsl_rl/
+beyondmimic/unitree_rl_gym/
+beyondmimic/unitree_sdk2_python/
+beyondmimic/whole_body_tracking/
+beyondmimic/codes&datasets/
+beyondmimic/Beyondmimic_Deploy_G1/
+beyondmimic/*.csv
+beyondmimic/*.pdf
+
+# ===== Conda / venv =====
+.venv/
+.conda/

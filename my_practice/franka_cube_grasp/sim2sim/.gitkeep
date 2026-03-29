@@ -1,0 +1,3 @@
+# Sim2Sim: IsaacSim → MuJoCo transfer
+# This directory will contain ONNX export, MJCF scene, and MuJoCo eval scripts.
+# Will be implemented in Phase 5.
