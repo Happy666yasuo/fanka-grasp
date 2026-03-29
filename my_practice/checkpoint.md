@@ -71,3 +71,35 @@
     - Reward: reaching(1.0) + lifting(15.0) + goal_tracking(10.0) + action_rate(-1e-4) + joint_vel(-1e-4)
     - "ALL CHECKS PASSED ✅"
 - **回退命令**: `git checkout cp-1-scene-setup`
+
+### CP-2: SAC Baseline 训练管线
+- **时间**: 2026-03-29 18:30
+- **Git Tag**: cp-2-sac-baseline
+- **Commit**: 712c51d
+- **分支**: franka-grasp
+- **状态**: ✅ 通过
+- **内容**:
+  - 编写 `agents/sac_cfg.py`: SAC 超参数配置 (dataclass)
+    - buffer_size=100,000, batch_size=256, net_arch=[256,256], gamma=0.99, ent_coef=auto
+  - 编写 `scripts/train.py`: 完整 SAC 训练管线
+    - AppLauncher 启动 → ManagerBasedRLEnv → Sb3VecEnvWrapper → SAC
+    - 支持 --num_envs, --total_timesteps, --reward_type, --seed, --log_dir, --headless
+    - CheckpointCallback + SuccessRateCallback (自定义)
+    - 训练结束自动保存 latest.zip + 导出 policy.onnx
+  - 编写 `scripts/eval.py`: 评估脚本
+    - 加载 checkpoint → 确定性推理 → 报告 Mean Reward / Success Rate
+    - 支持 --checkpoint, --num_episodes, --num_envs, --headless
+  - 更新 `agents/__init__.py`: 导出 SAC_DEFAULT_CFG
+- **验证**:
+  - V2-1: 3 个新 .py 文件全部 py_compile 通过 ✅
+  - V2-2: 1000 步冒烟训练 (headless, 4 envs, sparse) ✅
+    - 生成 `logs/test_run/checkpoints/latest.zip` (3.4MB)
+    - 生成 `logs/test_run/policy.onnx` (316KB)
+    - 生成 TensorBoard events 文件
+  - V2-3: checkpoint 文件存在 ✅
+  - V2-4: TB 日志存在 ✅
+  - V2-5: eval.py 运行 5 episodes ✅
+    - Mean Reward: -0.332 ± 0.086
+    - Mean Ep Length: 250.0 (全部超时)
+    - Success Rate: 0.0% (预期：稀疏奖励 + 仅 1000 步 → 不收敛)
+- **回退命令**: `git checkout cp-2-sac-baseline`
