@@ -208,3 +208,23 @@
     - 物理差异: IsaacLab PhysX vs MuJoCo implicit integrator
     - 完整训练后的 Sim2Sim 迁移效果待正式实验评估
 - **回退命令**: `git checkout cp-5-sim2sim`
+
+### CP-6: 总结报告 + 收尾
+- **时间**: 2026-03-30 17:00
+- **Git Tag**: cp-6-report
+- **Commit**: fcc3026
+- **分支**: franka-grasp
+- **状态**: ✅ 通过
+- **内容**:
+  - 编写 `REPORT.md`: 完整实验报告 (~350 行)
+    - 问题定义、环境设计 (场景/观测/动作/事件详表)
+    - 算法分析: SAC 选择理由 + 超参数
+    - 四种奖励策略: Sparse / Shaped / PBRS / Curriculum
+    - HER 实现: GoalEnv wrapper + 三个关键 bug 修复
+    - Sim2Sim: 物理参数对齐表 + 观测/动作映射 + 差异分析
+    - 结论与展望 + 项目文件结构 + 运行命令速查
+  - 更新 `README.md`: 所有 Phase 状态更新为 ✅
+  - 编写 `daily_log_2026-03-30.md`: Day 2 工作日志
+  - GitHub 推送: franka-grasp 分支 + cp-4/5/6 tags
+- **验证**: 报告内容完整, Git 推送成功
+- **回退命令**: `git checkout cp-6-report`
