@@ -228,3 +228,26 @@
   - GitHub 推送: franka-grasp 分支 + cp-4/5/6 tags
 - **验证**: 报告内容完整, Git 推送成功
 - **回退命令**: `git checkout cp-6-report`
+
+### CP-6 补全: Phase 6 交付物完善
+- **时间**: 2026-03-30 18:30
+- **Git Tag**: cp-6-complete
+- **Commit**: f1cd302
+- **分支**: franka-grasp
+- **状态**: ✅ 通过
+- **内容**:
+  - 新增 `CurriculumRewardsCfg` 到 `franka_grasp_env_cfg.py` (支持 curriculum 奖励方案)
+  - 扩展 `train.py`: `--reward_type` 新增 `curriculum` 选项
+  - 新建 `scripts/run_experiments.sh`: 6 组实验批量运行器
+    - exp-01: SAC + Sparse, exp-02: SAC + Shaped, exp-03: SAC + Curriculum
+    - exp-04: SAC + PBRS, exp-05: SAC+HER + Sparse, exp-06: SAC+HER + Shaped
+    - 全部 headless, num_envs=64, 500K 步, seed=42
+  - 新建 `scripts/plot_results.py`: TensorBoard 日志比较绘图工具
+    - 读取 TB event 文件, 绘制 reward/episode_length/success_rate 曲线
+    - 支持 EMA 平滑, 生成 summary_bar.png 汇总柱状图
+  - 更新 `REPORT.md`: 新增 §5.1 实验矩阵表 (6 行), §5.4 预测分析, 更新文件结构和命令附录
+- **验证**:
+  - 4 文件 py_compile / bash -n 语法检查全部通过 ✅
+  - 5 项交付物全部确认存在 ✅
+  - GitHub 推送成功: franka-grasp + main 分支均同步到 f1cd302 ✅
+- **回退命令**: `git checkout cp-6-complete`
