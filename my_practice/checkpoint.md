@@ -174,7 +174,7 @@
 ### CP-5: Sim2Sim — IsaacSim → MuJoCo 迁移
 - **时间**: 2026-03-30 16:50
 - **Git Tag**: cp-5-sim2sim
-- **Commit**: (待填)
+- **Commit**: 41f3583
 - **分支**: franka-grasp
 - **状态**: ✅ 通过
 - **内容**:

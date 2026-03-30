@@ -53,9 +53,9 @@
 | 1 | 场景搭建与自定义环境 | ✅ | `cp-1-scene-setup` |
 | 2 | SAC Baseline 训练 | ✅ | `cp-2-sac-baseline` |
 | 3 | Reward Shaping + 课程学习 | ✅ | `cp-3-reward-shaping` |
-| 4 | HER 集成 | ⬜ | |
-| 5 | Sim2Sim 迁移验证 | ⬜ | |
-| 6 | 实验对比与报告 | ⬜ | |
+| 4 | HER 集成 | ✅ | `cp-4-her` |
+| 5 | Sim2Sim 迁移验证 | ✅ | `cp-5-sim2sim` |
+| 6 | 实验对比与报告 | ✅ | `cp-6-report` |
 
 ## ⚠️ 显存约束
 
