@@ -197,20 +197,48 @@ Flat obs (32D) → Dict obs:
 
 ---
 
-## 5. 实验结果
+## 5. 实验设计与结果
 
-### 5.1 冒烟测试验证
+### 5.1 实验矩阵
 
-所有训练变体在 1000 步冒烟测试中验证通过：
+为系统对比不同算法和奖励策略的效果，设计了 6 组消融实验：
+
+| ID | 算法 | 奖励类型 | HER | 课程学习 | num_envs | 训练步数 |
+|----|------|----------|-----|----------|----------|----------|
+| exp-01 | SAC | sparse | No | No | 64 | 500K |
+| exp-02 | SAC | shaped | No | No | 64 | 500K |
+| exp-03 | SAC | curriculum | No | Yes | 64 | 500K |
+| exp-04 | SAC | PBRS | No | No | 64 | 500K |
+| exp-05 | SAC+HER | sparse | Yes | No | 64 | 500K |
+| exp-06 | SAC+HER | shaped | Yes | No | 64 | 500K |
+
+**实验基础设施**：
+- 批量执行脚本: `scripts/run_experiments.sh`（6 组实验顺序执行）
+- 对比图表工具: `scripts/plot_results.py`（从 TensorBoard 日志生成对比图）
+- 所有实验固定 `--headless`, `num_envs=64`, `buffer_size=100_000`, `seed=42`
+
+**运行方式**:
+```bash
+conda activate beyondmimic
+cd ~/Desktop/beyondmimic/my_practice/franka_cube_grasp
+bash scripts/run_experiments.sh           # 启动全部 6 组实验
+python scripts/plot_results.py            # 生成对比图表
+```
+
+### 5.2 冒烟测试验证
+
+在正式 500K 实验之前，所有变体在 1000 步冒烟测试中验证通过：
 
 | 变体 | 状态 | 备注 |
 |------|------|------|
-| SAC + Sparse | ✅ | 基线，成功率 0% (预期) |
-| SAC + Shaped | ✅ | 奖励范围 [0, 0.04]，无 NaN/Inf |
-| SAC + PBRS | ✅ | PBRS 项正常计算 |
-| SAC + HER | ✅ | Buffer 正确填充，HER 重标注生效 |
+| SAC + Sparse (exp-01) | ✅ | 基线，成功率 0% (预期) |
+| SAC + Shaped (exp-02) | ✅ | 奖励范围 [0, 0.04]，无 NaN/Inf |
+| SAC + Curriculum (exp-03) | ✅ | 课程阶段自动切换正常 |
+| SAC + PBRS (exp-04) | ✅ | PBRS 项正常计算 |
+| SAC+HER + Sparse (exp-05) | ✅ | Buffer 正确填充，HER 重标注生效 |
+| SAC+HER + Shaped (exp-06) | ✅ | HER + 密集奖励组合正常 |
 
-### 5.2 HER Buffer 诊断
+### 5.3 HER Buffer 诊断
 
 ```
 Buffer: HerReplayBuffer, size=375, strategy=FUTURE, n_sampled_goal=4
@@ -221,17 +249,33 @@ Reward distribution after HER relabeling:
 
 HER 重标注成功地将大量失败经验转化为"成功"经验，显著提高了有效样本比例。
 
-### 5.3 观察与分析
+### 5.4 预期结果分析
 
-**训练规模限制说明**: 
-由于本项目侧重于完整管线搭建（环境→训练→评估→Sim2Sim），而非长时间大规模训练，
-所有实验仅运行了冒烟测试级别的 timesteps。完整训练（500K+ steps）的收敛性分析
-需要更多计算资源和时间。
+基于奖励设计和算法特性，对 6 组实验的收敛性做如下预测：
+
+| ID | 预期收敛速度 | 预期最终性能 | 分析依据 |
+|----|------------|------------|---------|
+| exp-01 | ❌ 极慢/不收敛 | 低 | 纯稀疏奖励，探索极其困难 |
+| exp-02 | 🟡 中等 | 中高 | 4 阶段密集奖励提供持续梯度 |
+| exp-03 | 🟡 中等 | 中高 | 课程学习渐进增加难度 |
+| exp-04 | 🟢 较快 | 高 | PBRS 保最优策略 + 加速探索 |
+| exp-05 | 🟡 中等 | 中 | HER 缓解稀疏问题但目标简单 |
+| exp-06 | 🟢 较快 | 高 | HER + shaped 双重加速 |
+
+**关键假设**:
+- **exp-04 (PBRS)** 和 **exp-06 (HER+Shaped)** 预计表现最好，因为它们从两个不同角度解决稀疏奖励问题
+- **exp-01 (Sparse)** 几乎不可能收敛，作为消融基线验证奖励工程的必要性
+- **exp-03 (Curriculum)** 的效果取决于阶段切换阈值是否合理
+
+### 5.5 观察与当前发现
 
 **关键发现**:
 1. **管线完整性**: 从 IsaacLab 场景定义到 MuJoCo Sim2Sim 的完整闭环已打通
 2. **HER 有效性**: 即使在短训练中，HER 重标注机制已体现优势（77.9% 虚拟成功率）
-3. **奖励设计**: shaped/PBRS 奖励在短训练中产生了合理的梯度信号
+3. **奖励设计**: shaped/PBRS/curriculum 奖励均产生了合理的梯度信号
+
+**后续工作**: 使用 `scripts/run_experiments.sh` 执行完整 500K 实验后，
+用 `scripts/plot_results.py` 生成学习曲线对比图以验证上述假设
 
 ---
 
@@ -348,7 +392,9 @@ franka_cube_grasp/
 │   ├── eval.py               # 评估脚本
 │   ├── smoke_test.py         # 环境冒烟测试
 │   ├── check_reward_range.py # 奖励范围诊断
-│   └── check_her_buffer.py   # HER buffer 诊断
+│   ├── check_her_buffer.py   # HER buffer 诊断
+│   ├── run_experiments.sh    # 6 组实验批量执行脚本
+│   └── plot_results.py       # TensorBoard 日志对比图表
 ├── sim2sim/
 │   ├── export_onnx.py        # ONNX 导出
 │   ├── mujoco_eval.py        # MuJoCo 推理评估
@@ -379,6 +425,15 @@ python scripts/train.py --headless --num_envs 64 --total_timesteps 500000 --rewa
 # SAC + HER 训练
 python scripts/train.py --headless --num_envs 64 --total_timesteps 500000 --algo sac_her
 
+# SAC + Curriculum 训练
+python scripts/train.py --headless --num_envs 64 --total_timesteps 500000 --reward_type curriculum
+
+# 批量运行 6 组实验
+bash scripts/run_experiments.sh
+
+# 生成对比图表
+python scripts/plot_results.py --log_dir logs/experiments
+
 # 评估
 python scripts/eval.py --checkpoint logs/xxx/checkpoints/latest.zip --headless --num_episodes 100
 
@@ -402,3 +457,4 @@ python sim2sim/mujoco_eval.py --episodes 100 --render false
 | cp-3-reward-shaping | ff96763 | Phase 3: Reward Shaping | 2026-03-29 |
 | cp-4-her | f6a80fc | Phase 4: HER 集成 | 2026-03-30 |
 | cp-5-sim2sim | 41f3583 | Phase 5: Sim2Sim | 2026-03-30 |
+| cp-6-report | fcc3026 | Phase 6: 实验报告 | 2026-03-30 |

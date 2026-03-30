@@ -40,7 +40,7 @@ parser = argparse.ArgumentParser(description="Franka Grasp — SAC Training")
 parser.add_argument("--num_envs", type=int, default=64, help="Number of parallel environments.")
 parser.add_argument("--total_timesteps", type=int, default=500_000, help="Total training timesteps.")
 parser.add_argument("--reward_type", type=str, default="sparse",
-                    choices=["sparse", "shaped", "pbrs"],
+                    choices=["sparse", "shaped", "pbrs", "curriculum"],
                     help="Reward function variant.")
 parser.add_argument("--algo", type=str, default="sac",
                     choices=["sac", "sac_her"],
@@ -82,6 +82,7 @@ from envs.franka_grasp_env_cfg import (
     SparseRewardsCfg,
     ShapedRewardsCfg,
     PBRSRewardsCfg,
+    CurriculumRewardsCfg,
 )
 from agents.sac_cfg import SACConfig
 from agents.her_wrapper import HERGoalVecEnvWrapper
@@ -203,6 +204,7 @@ def main() -> None:
         "sparse": SparseRewardsCfg,
         "shaped": ShapedRewardsCfg,
         "pbrs": PBRSRewardsCfg,
+        "curriculum": CurriculumRewardsCfg,
     }
     if args_cli.reward_type in reward_map:
         cfg.rewards = reward_map[args_cli.reward_type]()

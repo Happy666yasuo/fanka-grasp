@@ -350,6 +350,34 @@ class PBRSRewardsCfg:
     )
 
 
+@configclass
+class CurriculumRewardsCfg:
+    """Curriculum reward (Phase 3 — curriculum strategy).
+
+    Uses the curriculum_reward function that adapts difficulty over training:
+    Easy (<50K) → Medium (<200K) → Hard (200K+).
+    """
+
+    curriculum = RewTerm(
+        func=mdp.curriculum_reward,
+        params={
+            "easy_threshold": 50_000,
+            "medium_threshold": 200_000,
+            "reach_std": 0.1,
+            "lift_target": 0.2,
+        },
+        weight=1.0,
+    )
+
+    # Penalties
+    action_rate = RewTerm(func=mdp.action_rate_l2, weight=-1e-4)
+    joint_vel = RewTerm(
+        func=mdp.joint_vel_l2,
+        weight=-1e-4,
+        params={"asset_cfg": SceneEntityCfg("robot")},
+    )
+
+
 # ============================================================================
 # MDP — Terminations
 # ============================================================================
