@@ -42,6 +42,9 @@ parser.add_argument("--total_timesteps", type=int, default=500_000, help="Total 
 parser.add_argument("--reward_type", type=str, default="sparse",
                     choices=["sparse", "shaped", "pbrs"],
                     help="Reward function variant.")
+parser.add_argument("--algo", type=str, default="sac",
+                    choices=["sac", "sac_her"],
+                    help="Algorithm: sac (standard) or sac_her (SAC + HER).")
 parser.add_argument("--seed", type=int, default=42, help="Random seed.")
 parser.add_argument("--log_dir", type=str, default=None,
                     help="Log directory (default: logs/sac_{reward_type}_{timestamp}).")
@@ -66,6 +69,7 @@ from stable_baselines3.common.callbacks import (
     EvalCallback,
 )
 from stable_baselines3.common.logger import configure
+from stable_baselines3.her import HerReplayBuffer
 
 from isaaclab.envs import ManagerBasedRLEnv
 from isaaclab_rl.sb3 import Sb3VecEnvWrapper
@@ -80,6 +84,7 @@ from envs.franka_grasp_env_cfg import (
     PBRSRewardsCfg,
 )
 from agents.sac_cfg import SACConfig
+from agents.her_wrapper import HERGoalVecEnvWrapper
 
 
 # ===================================================================
@@ -168,7 +173,8 @@ def main() -> None:
     if args_cli.log_dir is not None:
         log_dir = args_cli.log_dir
     else:
-        log_dir = os.path.join("logs", f"sac_{args_cli.reward_type}_{timestamp}")
+        algo_tag = args_cli.algo.replace("_", "-")
+        log_dir = os.path.join("logs", f"{algo_tag}_{args_cli.reward_type}_{timestamp}")
 
     log_dir = os.path.abspath(log_dir)
     ckpt_dir = os.path.join(log_dir, "checkpoints")
@@ -179,6 +185,7 @@ def main() -> None:
     print("=" * 60)
     print("Franka Cube Grasp — SAC Training")
     print("=" * 60)
+    print(f"  algo            : {args_cli.algo}")
     print(f"  reward_type     : {args_cli.reward_type}")
     print(f"  num_envs        : {args_cli.num_envs}")
     print(f"  total_timesteps : {args_cli.total_timesteps}")
@@ -211,11 +218,35 @@ def main() -> None:
     print(f"[INFO] Obs space: {sb3_env.observation_space}")
     print(f"[INFO] Act space: {sb3_env.action_space}")
 
+    # -- Optionally wrap for HER --
+    use_her = (args_cli.algo == "sac_her")
+    if use_her:
+        sb3_env = HERGoalVecEnvWrapper(sb3_env)
+        print(f"[INFO] HER wrapper applied. Dict obs space: {sb3_env.observation_space}")
+
     # -- Create SAC agent --
     sac_cfg = SACConfig(seed=args_cli.seed)
     sb3_kwargs = sac_cfg.to_sb3_kwargs()
     # SB3 SAC constructor takes `env` as first positional arg after `policy`
     policy_name = sb3_kwargs.pop("policy")
+
+    # Override policy for HER (requires MultiInputPolicy for Dict obs)
+    if use_her:
+        policy_name = "MultiInputPolicy"
+        sb3_kwargs["replay_buffer_class"] = HerReplayBuffer
+        sb3_kwargs["replay_buffer_kwargs"] = dict(
+            n_sampled_goal=4,
+            goal_selection_strategy="future",
+        )
+        # HER needs at least one full episode before sampling from the buffer.
+        # Episode length = episode_length_s / dt / decimation = 5.0 / 0.01 / 2 = 250.
+        # learning_starts must be >= max_episode_steps * num_envs to ensure
+        # at least one episode completes before training begins.
+        max_ep_steps = int(cfg.episode_length_s / (cfg.sim.dt * cfg.decimation))
+        sb3_kwargs["learning_starts"] = max_ep_steps * args_cli.num_envs
+        print(f"[INFO] Using HER: MultiInputPolicy + HerReplayBuffer (future, n=4)")
+        print(f"[INFO] HER learning_starts = {sb3_kwargs['learning_starts']} "
+              f"(ep_len={max_ep_steps} x num_envs={args_cli.num_envs})")
 
     model = SAC(
         policy_name,
@@ -255,7 +286,11 @@ def main() -> None:
     print(f"[INFO] Final model saved: {final_path}.zip")
 
     # -- Export ONNX --
-    obs_dim = sb3_env.observation_space.shape[0]  # type: ignore[index]
+    if use_her:
+        # For HER, obs_dim is the "observation" part (without goal)
+        obs_dim = sb3_env.observation_space["observation"].shape[0]
+    else:
+        obs_dim = sb3_env.observation_space.shape[0]  # type: ignore[index]
     onnx_path = os.path.join(log_dir, "policy.onnx")
     export_onnx(model, onnx_path, obs_dim)
 
