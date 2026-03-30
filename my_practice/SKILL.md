@@ -2,7 +2,7 @@
 
 > **项目名称**: 基于 IsaacLab 的 Franka 机械臂抓取（SAC + Reward Shaping / HER）
 > **维护者**: happywindman
-> **最后更新**: 2026-03-28
+> **最后更新**: 2026-03-30
 >
 > ⚠️ **注意**: 标准 Agent Skills 文件（供 AI 编辑器自动发现使用）位于：
 > `<项目根目录>/.agents/skills/franka-cube-grasp/SKILL.md`
@@ -48,37 +48,37 @@
 ## 2. 技能树（Skill Tree）
 
 ### 2.1 仿真与场景搭建
-- [ ] **IsaacSim 基础**: USD 场景格式、PhysX GPU 物理引擎、Omniverse 渲染管线
-- [ ] **IsaacLab Manager-Based 环境**: `ManagerBasedRLEnvCfg`、`InteractiveSceneCfg`
-- [ ] **机器人模型**: Franka Panda URDF/USD 导入、关节配置（7-DOF + 2 gripper）
-- [ ] **场景搭建**: 桌面 + 方块 (`RigidObjectCfg`) + 灯光 + 地面
-- [ ] **传感器**: `FrameTransformerCfg`（末端执行器位姿）、接触传感器
-- [ ] **域随机化**: 物体质量/摩擦/初始位姿 随机化
+- [x] **IsaacSim 基础**: USD 场景格式、PhysX GPU 物理引擎、Omniverse 渲染管线
+- [x] **IsaacLab Manager-Based 环境**: `ManagerBasedRLEnvCfg`、`InteractiveSceneCfg`
+- [x] **机器人模型**: Franka Panda URDF/USD 导入、关节配置（7-DOF + 2 gripper）
+- [x] **场景搭建**: 桌面 + 方块 (`RigidObjectCfg`) + 灯光 + 地面
+- [x] **传感器**: `FrameTransformerCfg`（末端执行器位姿）
+- [x] **域随机化**: 物体初始位姿随机化 (x/y offset)
 
 ### 2.2 强化学习算法
-- [ ] **SAC 理论**: 最大熵 RL、自动温度调节 α、soft Q-function
-- [ ] **SAC 实现**: `stable_baselines3.SAC` 或 `skrl` 框架集成
-- [ ] **稀疏奖励问题**: 理解探索困难的根因
-- [ ] **Reward Shaping**: 距离引导、阶段性奖励、势函数方法（PBRS）
-- [ ] **HER**: 目标重标注策略（future / final / episode）、与 SAC 结合
-- [ ] **课程学习**: 由易到难逐步增加任务难度
+- [x] **SAC 理论**: 最大熵 RL、自动温度调节 α、soft Q-function
+- [x] **SAC 实现**: `stable_baselines3.SAC` 框架集成
+- [x] **稀疏奖励问题**: 理解探索困难的根因
+- [x] **Reward Shaping**: 距离引导、阶段性奖励 (shaped_multi_stage)、势函数方法 (PBRS)
+- [x] **HER**: 目标重标注策略（future）、与 SAC 结合、GoalEnv wrapper
+- [x] **课程学习**: 由易到难逐步增加任务难度 (curriculum_reward)
 
 ### 2.3 观测-动作-奖励 设计（MDP）
-- [ ] **观测空间**: 关节角/角速度、末端位姿、物体位姿、目标位姿、gripper 状态
-- [ ] **动作空间**: 关节力矩（连续）或逆运动学目标位置
-- [ ] **奖励函数**: 稀疏（抬起成功 +1）→ 密集（距离 + 抬升高度 + 对齐 + 抓握）
-- [ ] **终止条件**: 超时、物体掉落、成功抬起
+- [x] **观测空间**: joint_pos_rel(9D) + joint_vel_rel(9D) + object_pos_b(3D) + ee_object_rel(3D) + last_action(8D) = 32D
+- [x] **动作空间**: 关节位置增量(7D, scale=0.5) + 二值夹爪(1D) = 8D
+- [x] **奖励函数**: Sparse / Shaped(4阶段) / PBRS / Curriculum — 4种可切换
+- [x] **终止条件**: 超时(5s/250步) + 物体掉落
 
 ### 2.4 Sim2Sim 迁移
-- [ ] **IsaacSim → MuJoCo**: 导出 MJCF 模型、物理参数对齐
-- [ ] **策略部署**: ONNX 导出、MuJoCo 推理脚本
-- [ ] **性能对比**: 两个仿真器中的成功率、轨迹对比
+- [x] **IsaacSim → MuJoCo**: MuJoCo Menagerie Franka Panda、物理参数对齐 (dt/gravity/contact)
+- [x] **策略部署**: ONNX 导出 (export_onnx.py)、MuJoCo 推理脚本 (mujoco_eval.py)
+- [x] **性能对比**: 两个仿真器中的成功率对比、差异分析文档 (REPORT.md)
 
 ### 2.5 工程实践
-- [ ] **实验管理**: TensorBoard / WandB 日志记录
-- [ ] **超参搜索**: 学习率、batch size、buffer size、α、γ
-- [ ] **代码组织**: 配置分离、环境/算法/评估 模块化
-- [ ] **版本控制**: Git 管理、checkpoint 命名规范
+- [x] **实验管理**: TensorBoard 日志 + SuccessRateCallback
+- [ ] **超参搜索**: 学习率、batch size、buffer size、α、γ (未深入调优)
+- [x] **代码组织**: @configclass 配置分离、envs/agents/scripts/sim2sim 模块化
+- [x] **版本控制**: Git 分阶段管理 (cp-0 ~ cp-6)、checkpoint.md 记录
 
 ---
 
@@ -157,11 +157,11 @@ my_practice/
 
 | 阶段 | 状态 | 备注 |
 |------|------|------|
-| 环境调研 | ✅ 完成 | conda 环境已确认 |
-| 文档规划 | 🔄 进行中 | SKILL / process / prompts 生成中 |
-| 场景搭建 | ⬜ 未开始 | 基于 IsaacLab Lift 任务改造 |
-| SAC 训练 | ⬜ 未开始 | SB3 / SKRL 二选一 |
-| Reward Shaping | ⬜ 未开始 | 先跑 baseline，再逐步加 |
-| HER 集成 | ⬜ 未开始 | SB3 原生支持 HER |
-| Sim2Sim | ⬜ 未开始 | ONNX 导出 + MuJoCo 推理 |
-| 实验报告 | ⬜ 未开始 | 成功率曲线 + 对比分析 |
+| 环境调研 | ✅ 完成 | conda 环境已确认, GPU RTX 4060 8GB |
+| 文档规划 | ✅ 完成 | SKILL / process / prompts / verify_checklist / checkpoint |
+| 场景搭建 | ✅ 完成 | Franka + table + DexCube + EE frame, 32D obs, 8D action |
+| SAC 训练 | ✅ 完成 | SB3 SAC, MlpPolicy, buffer=100K, net=[256,256] |
+| Reward Shaping | ✅ 完成 | Sparse / Shaped(4阶段) / PBRS / Curriculum 四种 |
+| HER 集成 | ✅ 完成 | GoalEnv wrapper + HerReplayBuffer(future, n=4) |
+| Sim2Sim | ✅ 完成 | ONNX 导出 + MuJoCo Menagerie Franka + 推理评估 |
+| 实验报告 | ✅ 完成 | REPORT.md ~350行, 含参数对齐表/差异分析 |

@@ -8,16 +8,27 @@ dist/
 build/
 *.so
 
-# ===== Training artifacts =====
-*.onnx
+# ===== Training artifacts (logs/) =====
+# Keep log directory structure, exclude heavy model files
+**/logs/**/*.zip
+**/logs/**/*.onnx
+**/logs/**/*.pt
+**/logs/**/*.pth
+**/logs/**/tb_logs/
+**/logs/**/wandb/
+
+# Checkpoints dir placeholder only
+**/checkpoints/*.zip
+**/checkpoints/*.pt
+
+# ===== Sim2Sim ONNX: ALLOW tracking =====
+# policy_franka_grasp.onnx is the deployment artifact, should be tracked
+# (no blanket *.onnx exclusion)
+
+# ===== Other large binary =====
+*.npz
 *.pt
 *.pth
-*.zip
-*.npz
-logs/tb_logs/
-logs/wandb/
-checkpoints/*.zip
-checkpoints/*.pt
 
 # ===== IsaacSim / IsaacLab =====
 *.usd
@@ -45,3 +56,8 @@ hello.txt
 # ===== Conda / venv =====
 .venv/
 .conda/
+
+# ===== MuJoCo Menagerie: exclude unnecessary MJX (JAX) variants =====
+my_practice/franka_cube_grasp/sim2sim/franka_emika_panda/mjx_*
+my_practice/franka_cube_grasp/sim2sim/franka_emika_panda/panda_nohand.xml
+my_practice/franka_cube_grasp/sim2sim/franka_emika_panda/panda.png
