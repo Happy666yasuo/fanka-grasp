@@ -122,25 +122,40 @@ my_practice/
 ├── SKILL.md                     # 本文件
 ├── process.md                   # 项目流程文档
 ├── prompts.md                   # 提示词文档
+├── verify_checklist.md          # 验证清单
+├── checkpoint.md                # 版本节点记录
 ├── Embodied_Intelligence_Advance_Plan.md  # 进阶计划
-└── franka_cube_grasp/           # 项目主目录（待创建）
+├── daily_log_*.md               # 每日工作日志
+└── franka_cube_grasp/           # 项目主目录
+    ├── REPORT.md                # 完整实验报告 (~460行)
     ├── envs/                    # 自定义环境
     │   ├── __init__.py
-    │   ├── franka_grasp_env_cfg.py     # 场景 + MDP 配置
-    │   └── mdp/                        # 观测/奖励/终止 自定义项
+    │   ├── franka_grasp_env_cfg.py     # 场景 + MDP (5种奖励配置)
+    │   └── mdp/                        # 观测/奖励/终止
+    │       ├── observations.py         # object_pos, ee_pos, ee_object_rel
+    │       ├── rewards.py              # sparse, shaped, pbrs, curriculum
+    │       └── terminations.py         # object_dropped_below_table
     ├── agents/                  # RL 算法配置
-    │   ├── sac_cfg.py
-    │   └── her_wrapper.py
+    │   ├── sac_cfg.py           # SAC 超参数 (dataclass)
+    │   └── her_wrapper.py       # HERGoalVecEnvWrapper (218行)
     ├── sim2sim/                 # Sim2Sim 迁移
-    │   ├── export_onnx.py
-    │   ├── mujoco_eval.py
-    │   └── franka_table.xml    # MuJoCo MJCF 模型
-    ├── scripts/                 # 训练/评估/可视化脚本
-    │   ├── train.py
-    │   ├── eval.py
-    │   └── visualize.py
-    ├── configs/                 # Hydra 配置文件
-    ├── logs/                    # TensorBoard / WandB 日志
+    │   ├── export_onnx.py       # SB3 → ONNX 导出
+    │   ├── mujoco_eval.py       # MuJoCo 推理评估 (450行)
+    │   ├── policy_franka_grasp.onnx  # 部署策略 (312KB)
+    │   └── franka_emika_panda/  # MuJoCo Menagerie 模型
+    │       ├── franka_table.xml # Sim2Sim 场景
+    │       ├── panda.xml        # Franka Panda MJCF
+    │       └── hand.xml         # 夹爪 MJCF
+    ├── scripts/                 # 训练/评估/诊断脚本
+    │   ├── train.py             # SAC/SAC+HER 训练 (307行)
+    │   ├── eval.py              # 评估脚本
+    │   ├── run_experiments.sh   # 6组实验批量运行
+    │   ├── plot_results.py      # TensorBoard 对比绘图
+    │   ├── check_reward_range.py  # 奖励范围诊断
+    │   ├── check_her_buffer.py  # HER buffer 诊断
+    │   └── smoke_test.py        # 冒烟测试
+    ├── configs/                 # 配置文件 (预留)
+    ├── logs/                    # TensorBoard 日志
     └── checkpoints/             # 模型 checkpoint
 ```
 

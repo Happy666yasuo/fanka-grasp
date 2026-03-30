@@ -57,7 +57,18 @@ hello.txt
 .venv/
 .conda/
 
-# ===== MuJoCo Menagerie: exclude unnecessary MJX (JAX) variants =====
+# ===== MuJoCo Menagerie: exclude mesh assets + non-essential docs =====
+**/franka_emika_panda/assets/
+**/franka_emika_panda/CHANGELOG.md
+**/franka_emika_panda/LICENSE
+**/franka_emika_panda/README.md
+**/franka_emika_panda/scene.xml
+**/franka_emika_panda/mjx_*.xml
+**/franka_emika_panda/panda_nohand.xml
+
+# ===== TensorBoard event files (smoke tests) =====
+**/logs/**/events.out.tfevents.*
+**/logs/**/eval_results.txt
 my_practice/franka_cube_grasp/sim2sim/franka_emika_panda/mjx_*
 my_practice/franka_cube_grasp/sim2sim/franka_emika_panda/panda_nohand.xml
 my_practice/franka_cube_grasp/sim2sim/franka_emika_panda/panda.png
