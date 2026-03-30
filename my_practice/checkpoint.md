@@ -138,3 +138,73 @@
     - Per-term: shaped [0, 0.0388], action_rate [-0.0021, -0.0001], joint_vel [-0.0039, -0.0004]
     - 低幅值 (随机动作预期行为) — 正式训练中 shaped 会因策略改善而增大
 - **回退命令**: `git checkout cp-3-reward-shaping`
+
+### CP-4: HER 集成 (Hindsight Experience Replay)
+- **时间**: 2026-03-30 16:30
+- **Git Tag**: cp-4-her
+- **Commit**: f6a80fc
+- **分支**: franka-grasp
+- **状态**: ✅ 通过
+- **内容**:
+  - 实现 `agents/her_wrapper.py`: HERGoalVecEnvWrapper
+    - 将 flat obs (32D) 拆分为 Dict: observation(29D) + achieved_goal(3D) + desired_goal(3D)
+    - 实现 compute_reward() — 稀疏距离阈值奖励 (0/-1)
+    - 修复 terminal_observation dict 转换（SB3 _store_transition 兼容）
+    - 修复 env_method("compute_reward") 路由（HER buffer 调用拦截）
+  - 更新 `agents/__init__.py`: 导出 HERGoalVecEnvWrapper
+  - 扩展 `scripts/train.py`:
+    - 新增 --algo 参数 (sac / sac_her)
+    - sac_her 模式: MultiInputPolicy + HerReplayBuffer (future, n=4)
+    - 自动计算 learning_starts = max_ep_steps * num_envs (HER 需要至少 1 完整 episode)
+  - 新建 `scripts/check_her_buffer.py`: HER buffer 诊断工具
+    - 报告 buffer size / fill ratio / goal strategy
+    - 采样验证 + reward 分布分析
+- **验证**:
+  - V4-1: 3 个 .py 文件 py_compile 通过 ✅
+  - V4-2: SAC+HER 2000 步冒烟训练 (4 envs, headless, sparse reward) ✅
+    - HER wrapper: Dict obs (achieved_goal:3D, desired_goal:3D, observation:29D)
+    - learning_starts=1000 (250 steps/ep × 4 envs)
+    - 模型保存: latest.zip
+  - V4-3: check_her_buffer.py 1500 步 ✅
+    - Buffer: HerReplayBuffer, size=375, strategy=FUTURE, n_sampled_goal=4
+    - Sampling: obs keys 正确, shapes 正确 (64×29, 64×3, 64×3, 64×8, 64×1)
+    - Reward stats: min=-1.0, max=0.0, mean=-0.043 — HER 重标注生效 (292/375 success)
+- **回退命令**: `git checkout cp-4-her`
+
+### CP-5: Sim2Sim — IsaacSim → MuJoCo 迁移
+- **时间**: 2026-03-30 16:50
+- **Git Tag**: cp-5-sim2sim
+- **Commit**: (待填)
+- **分支**: franka-grasp
+- **状态**: ✅ 通过
+- **内容**:
+  - 下载 MuJoCo Menagerie Franka Panda 模型 (sparse clone + 本地复制)
+  - 创建 `sim2sim/franka_emika_panda/franka_table.xml`: Sim2Sim 场景
+    - Franka Panda (include panda.xml) + 桌面 + 方块 (DexCube 近似)
+    - 物理对齐: timestep=0.002, gravity=9.81, control 每 10 步 (=0.01s × decimation=2)
+    - grasp_home keyframe: IsaacLab 默认关节位置 + cube 初始位置
+    - 修复 Menagerie panda.xml keyframe qpos 冲突 (删除原 home keyframe)
+  - 创建 `sim2sim/export_onnx.py`: ONNX 导出脚本 (beyondmimic 环境)
+    - 加载 SB3 SAC checkpoint → 提取 actor → torch.onnx.export
+    - 支持 --checkpoint, --output, --obs_dim 参数
+    - 可选 onnxruntime 验证
+  - 创建 `sim2sim/mujoco_eval.py`: MuJoCo 推理评估脚本 (unitree-rl 环境)
+    - FrankaGraspMuJoCoEnv: 完整 obs 空间对齐 (32D)
+      - joint_pos_rel[0:9], joint_vel_rel[9:18], object_pos_b[18:21],
+        ee_object_rel[21:24], actions[24:32]
+    - ONNXPolicy: onnxruntime InferenceSession wrapper
+    - 关节映射: MuJoCo joint1-7 ↔ IsaacLab panda_joint1-7
+    - 执行器映射: actuator0-6 位置控制, actuator7 tendon (0-255)
+    - 支持 cube 随机化 (匹配 IsaacLab EventCfg)
+    - 成功判定: cube z > init_z + 0.06m
+- **验证**:
+  - V5-1: ONNX 导出成功 ✅ (logs/test_run → policy_franka_grasp.onnx, 310KB)
+  - V5-2: ONNX 文件存在 ✅
+  - V5-3: MuJoCo 推理 10 episodes 无报错 ✅
+    - ONNX 加载: input=obs[batch,32], output=action[batch,8]
+    - 策略输出非零动作 (范围 [-0.92, 0.51])
+  - V5-4: Success rate: 0.0% (0/10) — 预期结果
+    - 原因: checkpoint 仅训练 1000 步, 策略远未收敛
+    - 物理差异: IsaacLab PhysX vs MuJoCo implicit integrator
+    - 完整训练后的 Sim2Sim 迁移效果待正式实验评估
+- **回退命令**: `git checkout cp-5-sim2sim`

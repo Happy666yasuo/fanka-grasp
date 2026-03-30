@@ -1,0 +1,84 @@
+<!--
+  Franka Cube Grasp — Sim2Sim MuJoCo Scene
+  Conda env: unitree-rl (Python 3.8)
+
+  Scene: Franka Panda (Menagerie) + table + cube
+  Physics: Aligned with IsaacLab env (dt=0.002, control every 5 steps = 0.01s)
+
+  This file MUST reside inside the franka_emika_panda/ directory
+  because panda.xml uses meshdir="assets" relative to its own location.
+
+  Usage (from sim2sim/ dir):
+      python mujoco_eval.py
+-->
+<mujoco model="franka_grasp_sim2sim">
+  <include file="panda.xml"/>
+
+  <compiler angle="radian"/>
+
+  <!-- Physics: match IsaacLab dt=0.01s via timestep=0.002, control every 5 steps -->
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="implicitfast"
+          noslip_iterations="3"/>
+
+  <statistic center="0.3 0 0.4" extent="1"/>
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="120" elevation="-20"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0"
+             width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge"
+             rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3"
+             markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true"
+              texrepeat="5 5" reflectance="0.2"/>
+    <material name="table_mat" rgba="0.6 0.4 0.2 1"/>
+    <material name="cube_mat" rgba="1 0.2 0.2 1"/>
+  </asset>
+
+  <worldbody>
+    <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
+    <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+
+    <!-- Table: approximation of IsaacLab SeattleLabTable
+         Table surface at z = 0 (top face at -0.025+0.025 = 0) -->
+    <body name="table" pos="0.5 0.0 -0.025">
+      <geom name="table_top" type="box" size="0.35 0.4 0.025"
+            material="table_mat" mass="100" contype="1" conaffinity="1"/>
+      <!-- Legs (visual only) -->
+      <geom type="box" size="0.02 0.02 0.4" pos="-0.3 -0.35 -0.425"
+            rgba="0.5 0.3 0.15 1" contype="0" conaffinity="0"/>
+      <geom type="box" size="0.02 0.02 0.4" pos="0.3 -0.35 -0.425"
+            rgba="0.5 0.3 0.15 1" contype="0" conaffinity="0"/>
+      <geom type="box" size="0.02 0.02 0.4" pos="-0.3 0.35 -0.425"
+            rgba="0.5 0.3 0.15 1" contype="0" conaffinity="0"/>
+      <geom type="box" size="0.02 0.02 0.4" pos="0.3 0.35 -0.425"
+            rgba="0.5 0.3 0.15 1" contype="0" conaffinity="0"/>
+    </body>
+
+    <!-- Cube: DexCube approximation (scale 0.8 → half-size ~0.02)
+         Initial pos: [0.5, 0, 0.055] matching IsaacLab default -->
+    <body name="cube" pos="0.5 0.0 0.055">
+      <joint name="cube_free" type="free"/>
+      <geom name="cube_geom" type="box" size="0.02 0.02 0.02"
+            material="cube_mat" mass="0.1"
+            friction="1.0 0.005 0.0001"
+            contype="1" conaffinity="1"
+            solimp="0.95 0.99 0.001" solref="0.004 1"/>
+    </body>
+  </worldbody>
+
+  <!-- Keyframe: Franka in IsaacLab default pose + cube on table
+       qpos: joint1-7(7) + finger1,finger2(2) + cube_free(7) = 16 -->
+  <keyframe>
+    <key name="grasp_home"
+         qpos="0 -0.569 0 -2.810 0 3.037 0.741 0.04 0.04
+                0.5 0 0.055 1 0 0 0"
+         ctrl="0 -0.569 0 -2.810 0 3.037 0.741 255"/>
+  </keyframe>
+
+</mujoco>
