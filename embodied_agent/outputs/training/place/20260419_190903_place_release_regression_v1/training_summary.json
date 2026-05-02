@@ -1,0 +1,21 @@
+{
+  "skill": "place",
+  "algorithm": "sac",
+  "seed": 7,
+  "total_timesteps": 10000,
+  "run_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260419_190903_place_release_regression_v1",
+  "final_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260419_190903_place_release_regression_v1/final_model.zip",
+  "policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260419_190903_place_release_regression_v1/policy_manifest.json",
+  "best_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260419_190903_place_release_regression_v1/best_model/best_model.zip",
+  "best_policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260419_190903_place_release_regression_v1/best_policy_manifest.json",
+  "success_curve_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260419_190903_place_release_regression_v1/success_rate_curve.png",
+  "best_success_rate": 1.0,
+  "best_mean_reward": 27.881696660529485,
+  "curriculum_stages": [],
+  "expert_warmstart": {
+    "n_episodes": 50.0,
+    "n_transitions": 65.0,
+    "success_rate": 1.0,
+    "mean_reward": 28.700004767105828
+  }
+}

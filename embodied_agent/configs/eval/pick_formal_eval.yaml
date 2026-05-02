@@ -1,0 +1,26 @@
+output_root: outputs
+
+experiments:
+  - name: smoke_pick_fixed_50
+    episodes: 50
+    randomize: false
+    seed: 7
+    manifest_path: ../../outputs/training/pick/20260419_164442_smoke_pick_mainline_regression_retry/best_policy_manifest.json
+
+  - name: smoke_pick_random_50
+    episodes: 50
+    randomize: true
+    seed: 7
+    manifest_path: ../../outputs/training/pick/20260419_164442_smoke_pick_mainline_regression_retry/best_policy_manifest.json
+
+  - name: conservative_pick_fixed_50
+    episodes: 50
+    randomize: false
+    seed: 7
+    manifest_path: ../../outputs/training/pick/20260419_174421_fourth_round_pick_mainline_mixed_curriculum_conservative/best_policy_manifest.json
+
+  - name: conservative_pick_random_50
+    episodes: 50
+    randomize: true
+    seed: 7
+    manifest_path: ../../outputs/training/pick/20260419_174421_fourth_round_pick_mainline_mixed_curriculum_conservative/best_policy_manifest.json

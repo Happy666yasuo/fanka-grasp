@@ -1,0 +1,21 @@
+{
+  "skill": "pick",
+  "algorithm": "sac",
+  "seed": 7,
+  "total_timesteps": 30000,
+  "run_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_230026_pick_multi_object_staging_coverage_v1",
+  "final_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_230026_pick_multi_object_staging_coverage_v1/final_model.zip",
+  "policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_230026_pick_multi_object_staging_coverage_v1/policy_manifest.json",
+  "best_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_230026_pick_multi_object_staging_coverage_v1/best_model/best_model.zip",
+  "best_policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_230026_pick_multi_object_staging_coverage_v1/best_policy_manifest.json",
+  "success_curve_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_230026_pick_multi_object_staging_coverage_v1/success_rate_curve.png",
+  "best_success_rate": 0.5,
+  "best_mean_reward": 142.72260238607294,
+  "curriculum_stages": [],
+  "expert_warmstart": {
+    "n_episodes": 80.0,
+    "n_transitions": 493.0,
+    "success_rate": 0.9,
+    "mean_reward": 195.40952565985103
+  }
+}

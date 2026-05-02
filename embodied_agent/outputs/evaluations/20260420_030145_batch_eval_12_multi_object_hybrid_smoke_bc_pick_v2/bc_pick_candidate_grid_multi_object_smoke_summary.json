@@ -1,0 +1,38 @@
+{
+  "name": "bc_pick_candidate_grid_multi_object_smoke",
+  "episodes": 12,
+  "success_rate": 0.25,
+  "mean_goal_distance_xy": 0.8259337113418536,
+  "fallback_to_scripted": false,
+  "task_pool_size": 3,
+  "learned_skills": {
+    "pick": {
+      "skill_name": "pick",
+      "algorithm": "bc",
+      "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260420_025924_pick_bc_multi_object_candidate_grid_v2/best_policy.pt",
+      "max_steps": 20,
+      "action_repeat": 30,
+      "action_scale": 0.04,
+      "deterministic": true,
+      "use_staging": true
+    }
+  },
+  "recovery": {
+    "mean_replan_count": 0.75,
+    "max_replan_count": 1,
+    "episodes_with_replan": 9,
+    "successful_recovery_episodes": 0,
+    "recovery_success_rate": 0.0,
+    "episodes_with_step_failures": 9,
+    "total_step_failures": 18,
+    "failure_source_counts": {
+      "execution_error": 18
+    },
+    "failure_action_counts": {
+      "pick": 18
+    },
+    "recovery_policy_counts": {
+      "retry_pick_then_continue": 9
+    }
+  }
+}

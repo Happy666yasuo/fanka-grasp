@@ -1,0 +1,33 @@
+algo: sac
+skill: pick
+seed: 7
+total_timesteps: 30000
+output_root: C:\Users\DELL\OneDrive - 南京大学\桌面\大创\projects\embodied_agent\outputs
+policy: MlpPolicy
+env:
+  object_name: red_block
+  zone_name: green_zone
+  max_steps: 24
+  action_scale: 0.02
+  action_repeat: 24
+  randomize: true
+  seed: 7
+  use_staging: true
+algo_kwargs:
+  learning_rate: 0.0003
+  buffer_size: 100000
+  learning_starts: 1000
+  batch_size: 256
+  gamma: 0.99
+  tau: 0.005
+  train_freq: 1
+  gradient_steps: 1
+  ent_coef: auto
+  policy_kwargs:
+    net_arch:
+    - 128
+    - 128
+    use_sde: false
+eval:
+  episodes: 10
+  eval_freq: 2000

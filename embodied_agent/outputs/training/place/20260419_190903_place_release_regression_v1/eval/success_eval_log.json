@@ -1,0 +1,8 @@
+[
+  {
+    "timestep": 1000,
+    "mean_reward": 27.881696660529485,
+    "success_rate": 1.0,
+    "mean_episode_length": 1.0
+  }
+]

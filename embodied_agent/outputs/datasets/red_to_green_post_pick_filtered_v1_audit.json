@@ -1,0 +1,8 @@
+{
+  "source_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/evaluations/20260420_131259_batch_eval_50_place_runtime_alignment/learned_place_runtime_alignment_raw_entry_50_post_pick_states.jsonl",
+  "output_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/datasets/red_to_green_post_pick_filtered_v1.jsonl",
+  "lift_threshold": 0.7050000000000001,
+  "kept_count": 18,
+  "rejected_count": 16,
+  "unique_episodes": 13
+}

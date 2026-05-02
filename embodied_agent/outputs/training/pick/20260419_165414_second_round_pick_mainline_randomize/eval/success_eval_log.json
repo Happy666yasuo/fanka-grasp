@@ -1,0 +1,152 @@
+[
+  {
+    "timestep": 2000,
+    "mean_reward": 33.22954010461808,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 4000,
+    "mean_reward": 43.71084687586326,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 6000,
+    "mean_reward": 58.40405676166902,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 8000,
+    "mean_reward": 57.32517418369116,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 10000,
+    "mean_reward": 57.25784266989613,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 12000,
+    "mean_reward": 59.22688296053595,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 14000,
+    "mean_reward": 73.04972172255711,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 16000,
+    "mean_reward": 49.01123806672119,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 18000,
+    "mean_reward": 87.69449117257584,
+    "success_rate": 0.1,
+    "mean_episode_length": 19.15
+  },
+  {
+    "timestep": 20000,
+    "mean_reward": 90.2419070175727,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 22000,
+    "mean_reward": 101.07337246282468,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 24000,
+    "mean_reward": 127.6496768309897,
+    "success_rate": 0.05,
+    "mean_episode_length": 19.3
+  },
+  {
+    "timestep": 26000,
+    "mean_reward": 113.63680286858862,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 28000,
+    "mean_reward": 112.99154767783298,
+    "success_rate": 0.05,
+    "mean_episode_length": 19.35
+  },
+  {
+    "timestep": 30000,
+    "mean_reward": 112.0710292159727,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 32000,
+    "mean_reward": 110.01569622231257,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 34000,
+    "mean_reward": 105.06932568378568,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 36000,
+    "mean_reward": 109.48740256115755,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 38000,
+    "mean_reward": 110.93892066982934,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 40000,
+    "mean_reward": 102.64481181499966,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 42000,
+    "mean_reward": 99.7738754436829,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 44000,
+    "mean_reward": 111.44838145368533,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 46000,
+    "mean_reward": 96.0109975355472,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 48000,
+    "mean_reward": 116.8411661083034,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  },
+  {
+    "timestep": 50000,
+    "mean_reward": 115.39491271338356,
+    "success_rate": 0.0,
+    "mean_episode_length": 20.0
+  }
+]

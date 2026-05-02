@@ -1,0 +1,14 @@
+{
+  "version": "pybullet_probe_v1",
+  "run_id": "causal_eval_v3_smoke_causal_ep001",
+  "scene_id": "scene_causal_eval_v3_smoke_causal_ep001",
+  "object_manifest_path": "manifests/scene_causal_eval_v3_smoke_causal_ep001.json",
+  "objects": {
+    "red_block": {
+      "artifact_path": "artifacts/red_block.json"
+    },
+    "blue_block": {
+      "artifact_path": "artifacts/blue_block.json"
+    }
+  }
+}

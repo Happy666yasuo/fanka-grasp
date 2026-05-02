@@ -1,0 +1,14 @@
+{
+  "scene_id": "scene_causal_system_eval_v1_smoke_causal_ep002",
+  "source": "pybullet_probe_v1",
+  "objects": [
+    {
+      "object_id": "red_block",
+      "object_category": "rigid_block"
+    },
+    {
+      "object_id": "blue_block",
+      "object_category": "rigid_block"
+    }
+  ]
+}

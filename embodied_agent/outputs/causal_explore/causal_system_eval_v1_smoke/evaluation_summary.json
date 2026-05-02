@@ -1,0 +1,96 @@
+{
+  "version": "causal_explore_eval_v1",
+  "run_id": "causal_system_eval_v1_smoke",
+  "objects": [
+    "red_block",
+    "blue_block"
+  ],
+  "episodes": 3,
+  "strategies": [
+    {
+      "strategy": "random",
+      "episodes": 3,
+      "object_count": 2,
+      "mean_uncertainty": 0.0616666666666667,
+      "mean_displacement_xy": 0.20036577923032992,
+      "artifact_count": 6,
+      "planner_probe_count": 0,
+      "mean_requires_probe_rate": 0.0,
+      "actual_planner_probe_count": 0,
+      "planner_eval_case_count": 6,
+      "planner_probe_rate": 0.0,
+      "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/catalog.json",
+      "episode_catalog_paths": [
+        "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/catalog.json",
+        "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/episodes/episode_001/catalog.json",
+        "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/episodes/episode_002/catalog.json"
+      ],
+      "episode_metrics_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/episode_metrics.jsonl",
+      "output_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random",
+      "system_eval_case_count": 6,
+      "system_success_rate": 0.5,
+      "system_failure_count": 3,
+      "system_replan_count": 3,
+      "system_probe_step_count": 0,
+      "system_metrics_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/system_metrics.jsonl"
+    },
+    {
+      "strategy": "curiosity",
+      "episodes": 3,
+      "object_count": 2,
+      "mean_uncertainty": 0.1333333333333334,
+      "mean_displacement_xy": 0.1635286064202018,
+      "artifact_count": 6,
+      "planner_probe_count": 1,
+      "mean_requires_probe_rate": 0.16666666666666666,
+      "actual_planner_probe_count": 1,
+      "planner_eval_case_count": 6,
+      "planner_probe_rate": 0.16666666666666666,
+      "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/catalog.json",
+      "episode_catalog_paths": [
+        "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/catalog.json",
+        "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/episodes/episode_001/catalog.json",
+        "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/episodes/episode_002/catalog.json"
+      ],
+      "episode_metrics_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/episode_metrics.jsonl",
+      "output_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity",
+      "system_eval_case_count": 6,
+      "system_success_rate": 0.5,
+      "system_failure_count": 3,
+      "system_replan_count": 3,
+      "system_probe_step_count": 1,
+      "system_metrics_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/system_metrics.jsonl"
+    },
+    {
+      "strategy": "causal",
+      "episodes": 3,
+      "object_count": 2,
+      "mean_uncertainty": 0.050000000000000044,
+      "mean_displacement_xy": 0.16509249059644043,
+      "artifact_count": 6,
+      "planner_probe_count": 0,
+      "mean_requires_probe_rate": 0.0,
+      "actual_planner_probe_count": 0,
+      "planner_eval_case_count": 6,
+      "planner_probe_rate": 0.0,
+      "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/catalog.json",
+      "episode_catalog_paths": [
+        "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/catalog.json",
+        "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/episodes/episode_001/catalog.json",
+        "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/episodes/episode_002/catalog.json"
+      ],
+      "episode_metrics_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/episode_metrics.jsonl",
+      "output_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal",
+      "system_eval_case_count": 6,
+      "system_success_rate": 0.5,
+      "system_failure_count": 3,
+      "system_replan_count": 3,
+      "system_probe_step_count": 0,
+      "system_metrics_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/system_metrics.jsonl"
+    }
+  ],
+  "planner_eval_summary_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/planner_eval_summary.json",
+  "system_eval_summary_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/system_eval_summary.json",
+  "summary_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/evaluation_summary.json",
+  "output_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke"
+}

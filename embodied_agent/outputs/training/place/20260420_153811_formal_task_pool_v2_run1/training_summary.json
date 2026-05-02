@@ -1,0 +1,80 @@
+{
+  "skill": "place",
+  "algorithm": "sac",
+  "seed": 7,
+  "total_timesteps": 20000,
+  "run_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_153811_formal_task_pool_v2_run1",
+  "final_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_153811_formal_task_pool_v2_run1/final_model.zip",
+  "policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_153811_formal_task_pool_v2_run1/policy_manifest.json",
+  "best_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_153811_formal_task_pool_v2_run1/best_model/best_model.zip",
+  "best_policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_153811_formal_task_pool_v2_run1/best_policy_manifest.json",
+  "success_curve_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_153811_formal_task_pool_v2_run1/success_rate_curve.png",
+  "env_reset_source": "post_pick_states",
+  "env_post_pick_states_jsonl": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/datasets/task_pool_post_pick_curated_v2.jsonl",
+  "env_task_pool_size": 3,
+  "env_task_pool": [
+    {
+      "task_id": "red_to_green",
+      "instruction": "put the red block in the green zone",
+      "object_name": "red_block",
+      "zone_name": "green_zone"
+    },
+    {
+      "task_id": "blue_to_yellow",
+      "instruction": "put the blue block in the yellow zone",
+      "object_name": "blue_block",
+      "zone_name": "yellow_zone"
+    },
+    {
+      "task_id": "yellow_to_blue",
+      "instruction": "把黄色方块放到蓝色区域",
+      "object_name": "yellow_block",
+      "zone_name": "blue_zone"
+    }
+  ],
+  "eval_reset_source": "post_pick_states",
+  "eval_post_pick_states_jsonl": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/datasets/task_pool_post_pick_curated_v2.jsonl",
+  "eval_task_pool_size": 3,
+  "eval_task_pool": [
+    {
+      "task_id": "red_to_green",
+      "instruction": "put the red block in the green zone",
+      "object_name": "red_block",
+      "zone_name": "green_zone"
+    },
+    {
+      "task_id": "blue_to_yellow",
+      "instruction": "put the blue block in the yellow zone",
+      "object_name": "blue_block",
+      "zone_name": "yellow_zone"
+    },
+    {
+      "task_id": "yellow_to_blue",
+      "instruction": "把黄色方块放到蓝色区域",
+      "object_name": "yellow_block",
+      "zone_name": "blue_zone"
+    }
+  ],
+  "bc_init": {
+    "manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260415_231800_bc_place_v1/best_policy_manifest.json",
+    "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260415_231800_bc_place_v1/best_policy.pt",
+    "hidden": [
+      128,
+      128
+    ],
+    "obs_dim": 17,
+    "act_dim": 4,
+    "applied": true,
+    "log_std_initialized": true,
+    "log_std_value": -2.5
+  },
+  "best_success_rate": 0.25,
+  "best_mean_reward": 11.872896085041784,
+  "curriculum_stages": [],
+  "expert_warmstart": {
+    "n_episodes": 200.0,
+    "n_transitions": 5851.0,
+    "success_rate": 0.25,
+    "mean_reward": -26.79154573163737
+  }
+}

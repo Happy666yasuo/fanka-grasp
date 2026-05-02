@@ -1,0 +1,9 @@
+{
+  "skill_name": "pick",
+  "algorithm": "sac",
+  "model_path": "C:\\Users\\DELL\\OneDrive - 南京大学\\桌面\\大创\\projects\\embodied_agent\\outputs\\training\\pick\\20260415_200009_smoke_pick\\final_model.zip",
+  "max_steps": 40,
+  "action_repeat": 24,
+  "action_scale": 0.04,
+  "deterministic": true
+}

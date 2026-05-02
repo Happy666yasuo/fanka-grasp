@@ -1,0 +1,23 @@
+{
+  "name": "conservative_pick_random_50",
+  "episodes": 50,
+  "randomize": true,
+  "success_rate": 0.92,
+  "success_count": 46,
+  "success_ci95_low": 0.811614974549363,
+  "success_ci95_high": 0.9684509967442093,
+  "mean_episode_reward": 203.93828661691498,
+  "mean_episode_length": 4.78,
+  "mean_final_ee_object_distance": 0.10654866580313829,
+  "mean_final_lift_progress": 0.10373885710328372,
+  "mean_final_holding_flag": 0.92,
+  "pick_policy": {
+    "skill_name": "pick",
+    "algorithm": "sac",
+    "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_174421_fourth_round_pick_mainline_mixed_curriculum_conservative/best_model/best_model.zip",
+    "max_steps": 20,
+    "action_repeat": 30,
+    "action_scale": 0.04,
+    "deterministic": true
+  }
+}

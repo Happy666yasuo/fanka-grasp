@@ -1,0 +1,18 @@
+{
+  "name": "bc_pick_demo",
+  "episodes": 3,
+  "success_rate": 1.0,
+  "mean_goal_distance_xy": 0.04246134755384846,
+  "fallback_to_scripted": true,
+  "learned_skills": {
+    "pick": {
+      "skill_name": "pick",
+      "algorithm": "bc",
+      "model_path": "C:\\Users\\DELL\\OneDrive - 南京大学\\桌面\\大创\\projects\\embodied_agent\\outputs\\training\\pick\\20260415_222132_bc_pick_v1\\best_policy.pt",
+      "max_steps": 20,
+      "action_repeat": 60,
+      "action_scale": 0.04,
+      "deterministic": true
+    }
+  }
+}

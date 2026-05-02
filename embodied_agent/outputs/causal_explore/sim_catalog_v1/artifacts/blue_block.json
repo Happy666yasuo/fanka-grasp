@@ -1,0 +1,37 @@
+{
+  "scene_id": "scene_sim_0001",
+  "object_id": "blue_block",
+  "object_category": "rigid_block",
+  "property_belief": {
+    "mass": {
+      "label": "light",
+      "confidence": 0.84
+    },
+    "friction": {
+      "label": "medium",
+      "confidence": 0.76
+    },
+    "joint_type": {
+      "label": "none",
+      "confidence": 0.96
+    }
+  },
+  "affordance_candidates": [
+    {
+      "name": "graspable",
+      "confidence": 0.9
+    },
+    {
+      "name": "pushable",
+      "confidence": 0.74
+    }
+  ],
+  "uncertainty_score": 0.24,
+  "recommended_probe": "lateral_push",
+  "contact_region": "top_center",
+  "skill_constraints": {
+    "preferred_skill": "pick",
+    "max_force": 12.0,
+    "approach_axis": "top_down"
+  }
+}

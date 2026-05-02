@@ -1,0 +1,42 @@
+algo: sac
+skill: place
+seed: 7
+total_timesteps: 10000
+output_root: outputs
+policy: MlpPolicy
+
+expert_episodes: 50
+expert_noise_std: 0.02
+expert_pretrain_steps: 500
+
+env:
+  object_name: red_block
+  zone_name: green_zone
+  max_steps: 16
+  action_scale: 0.015
+  action_repeat: 12
+  randomize: true
+  seed: 7
+  use_staging: true
+  post_release_settle_steps: 3
+
+algo_kwargs:
+  learning_rate: 0.0003
+  buffer_size: 100000
+  learning_starts: 1000
+  batch_size: 256
+  gamma: 0.99
+  tau: 0.005
+  train_freq: 1
+  gradient_steps: 1
+  ent_coef: 0.01
+  policy_kwargs:
+    net_arch:
+      - 128
+      - 128
+
+eval:
+  episodes: 20
+  eval_freq: 1000
+  deterministic: true
+  early_stop_success_rate: 0.95

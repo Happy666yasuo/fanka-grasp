@@ -1,0 +1,313 @@
+{
+  "success": 49,
+  "failure": 1,
+  "details": [
+    {
+      "episode": 0,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 1,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 2,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 3,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 4,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 5,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 6,
+      "success": false,
+      "error_code": "place_failed: released_outside_zone",
+      "reward": 0.0
+    },
+    {
+      "episode": 7,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 8,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 9,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 10,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 11,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 12,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 13,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 14,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 15,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 16,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 17,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 18,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 19,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 20,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 21,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 22,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 23,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 24,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 25,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 26,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 27,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 28,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 29,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 30,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 31,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 32,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 33,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 34,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 35,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 36,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 37,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 38,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 39,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 40,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 41,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 42,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 43,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 44,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 45,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 46,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 47,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 48,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    },
+    {
+      "episode": 49,
+      "success": true,
+      "error_code": null,
+      "reward": 1.0
+    }
+  ],
+  "total": 50,
+  "success_rate": 0.98,
+  "failure_codes": {
+    "place_failed: released_outside_zone": 1
+  },
+  "elapsed_seconds": 9.157530632000999,
+  "passes_threshold": true
+}

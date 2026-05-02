@@ -1,0 +1,46 @@
+output_root: outputs
+
+experiments:
+  - name: scripted_baseline_20
+    instruction: put the red block in the green zone
+    episodes: 20
+    randomize: true
+    seed: 7
+    fallback_to_scripted: true
+    skills: {}
+
+  - name: learned_pick_hybrid_20
+    instruction: put the red block in the green zone
+    episodes: 20
+    randomize: true
+    seed: 7
+    fallback_to_scripted: false
+    skills:
+      pick:
+        manifest_path: ../../outputs/training/pick/20260419_164442_smoke_pick_mainline_regression_retry/best_policy_manifest.json
+        use_staging: true
+
+  - name: learned_place_hybrid_20
+    instruction: put the red block in the green zone
+    episodes: 20
+    randomize: true
+    seed: 7
+    fallback_to_scripted: false
+    skills:
+      place:
+        manifest_path: ../../outputs/training/place/20260419_190903_place_release_regression_v1/best_policy_manifest.json
+        use_staging: true
+
+  - name: learned_pick_place_full_20
+    instruction: put the red block in the green zone
+    episodes: 20
+    randomize: true
+    seed: 7
+    fallback_to_scripted: false
+    skills:
+      pick:
+        manifest_path: ../../outputs/training/pick/20260419_164442_smoke_pick_mainline_regression_retry/best_policy_manifest.json
+        use_staging: true
+      place:
+        manifest_path: ../../outputs/training/place/20260419_190903_place_release_regression_v1/best_policy_manifest.json
+        use_staging: true

@@ -1,0 +1,9 @@
+{
+  "skill_name": "pick",
+  "algorithm": "sac",
+  "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_174421_fourth_round_pick_mainline_mixed_curriculum_conservative/final_model.zip",
+  "max_steps": 20,
+  "action_repeat": 30,
+  "action_scale": 0.04,
+  "deterministic": true
+}

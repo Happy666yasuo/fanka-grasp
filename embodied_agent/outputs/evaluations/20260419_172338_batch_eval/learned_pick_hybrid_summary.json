@@ -1,0 +1,18 @@
+{
+  "name": "learned_pick_hybrid",
+  "episodes": 5,
+  "success_rate": 0.0,
+  "mean_goal_distance_xy": 0.4387007100342803,
+  "fallback_to_scripted": false,
+  "learned_skills": {
+    "pick": {
+      "skill_name": "pick",
+      "algorithm": "sac",
+      "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_165414_second_round_pick_mainline_randomize/best_model/best_model.zip",
+      "max_steps": 20,
+      "action_repeat": 30,
+      "action_scale": 0.04,
+      "deterministic": true
+    }
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "output_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/datasets/task_pool_post_pick_curated_v2.jsonl",
+  "source_paths": [
+    "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/evaluations/20260420_131259_batch_eval_50_place_runtime_alignment/learned_place_runtime_alignment_raw_entry_50_post_pick_states.jsonl",
+    "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/evaluations/20260420_131259_batch_eval_50_place_runtime_alignment/learned_place_runtime_alignment_staged_50_post_pick_states.jsonl"
+  ],
+  "filters": {
+    "capture_stage": "post_pick_success",
+    "task_pool": [
+      {
+        "task_id": "red_to_green",
+        "instruction": "put the red block in the green zone",
+        "object_name": "red_block",
+        "zone_name": "green_zone"
+      },
+      {
+        "task_id": "blue_to_yellow",
+        "instruction": "put the blue block in the yellow zone",
+        "object_name": "blue_block",
+        "zone_name": "yellow_zone"
+      },
+      {
+        "task_id": "yellow_to_blue",
+        "instruction": "把黄色方块放到蓝色区域",
+        "object_name": "yellow_block",
+        "zone_name": "blue_zone"
+      }
+    ],
+    "min_object_height": 0.705,
+    "lift_progress_range": [
+      0.065,
+      0.09
+    ],
+    "object_zone_distance_xy_range": [
+      0.35,
+      0.6
+    ],
+    "max_ee_object_distance": 0.16,
+    "min_held_local_z": 0.08
+  },
+  "counts": {
+    "total_records": 175,
+    "kept_records": 18,
+    "source::learned_place_runtime_alignment_raw_entry_50_post_pick_states.jsonl": 7,
+    "experiment::learned_place_runtime_alignment_raw_entry_50": 7,
+    "task::red_to_green": 7,
+    "capture_index::2": 18,
+    "task::yellow_to_blue": 6,
+    "source::learned_place_runtime_alignment_staged_50_post_pick_states.jsonl": 11,
+    "experiment::learned_place_runtime_alignment_staged_50": 11,
+    "task::blue_to_yellow": 5
+  },
+  "rejection_counts": {
+    "lift_progress": 28,
+    "object_height": 109,
+    "object_zone_distance_xy": 9,
+    "ee_object_distance": 11
+  },
+  "unique_records": [
+    {
+      "experiment": "learned_place_runtime_alignment_raw_entry_50",
+      "episode": 6,
+      "capture_index": 2,
+      "task_id": "red_to_green",
+      "object_name": "red_block",
+      "zone_name": "green_zone",
+      "object_zone_distance_xy": 0.43987401682602534,
+      "lift_progress": 0.07073656080000024,
+      "ee_object_distance": 0.09616085883138271,
+      "held_local_z": 0.08997178077697754
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_raw_entry_50",
+      "episode": 15,
+      "capture_index": 2,
+      "task_id": "red_to_green",
+      "object_name": "red_block",
+      "zone_name": "green_zone",
+      "object_zone_distance_xy": 0.5596637300402726,
+      "lift_progress": 0.0758059805870056,
+      "ee_object_distance": 0.10162451905664802,
+      "held_local_z": 0.08520996570587158
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_raw_entry_50",
+      "episode": 17,
+      "capture_index": 2,
+      "task_id": "yellow_to_blue",
+      "object_name": "yellow_block",
+      "zone_name": "blue_zone",
+      "object_zone_distance_xy": 0.5886083239274538,
+      "lift_progress": 0.08442683877944945,
+      "ee_object_distance": 0.09697321109070633,
+      "held_local_z": 0.083659827709198
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_raw_entry_50",
+      "episode": 26,
+      "capture_index": 2,
+      "task_id": "yellow_to_blue",
+      "object_name": "yellow_block",
+      "zone_name": "blue_zone",
+      "object_zone_distance_xy": 0.4189965678794864,
+      "lift_progress": 0.07205912495083344,
+      "ee_object_distance": 0.09530999249894688,
+      "held_local_z": 0.09018027782440186
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_raw_entry_50",
+      "episode": 33,
+      "capture_index": 2,
+      "task_id": "red_to_green",
+      "object_name": "red_block",
+      "zone_name": "green_zone",
+      "object_zone_distance_xy": 0.5596637300402726,
+      "lift_progress": 0.0758059805870056,
+      "ee_object_distance": 0.10162451905664802,
+      "held_local_z": 0.08520996570587158
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_raw_entry_50",
+      "episode": 36,
+      "capture_index": 2,
+      "task_id": "red_to_green",
+      "object_name": "red_block",
+      "zone_name": "green_zone",
+      "object_zone_distance_xy": 0.5596637300402726,
+      "lift_progress": 0.0758059805870056,
+      "ee_object_distance": 0.10162451905664802,
+      "held_local_z": 0.08520996570587158
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_raw_entry_50",
+      "episode": 44,
+      "capture_index": 2,
+      "task_id": "yellow_to_blue",
+      "object_name": "yellow_block",
+      "zone_name": "blue_zone",
+      "object_zone_distance_xy": 0.5886083239274538,
+      "lift_progress": 0.08442683877944945,
+      "ee_object_distance": 0.09697321109070633,
+      "held_local_z": 0.083659827709198
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_staged_50",
+      "episode": 4,
+      "capture_index": 2,
+      "task_id": "blue_to_yellow",
+      "object_name": "blue_block",
+      "zone_name": "yellow_zone",
+      "object_zone_distance_xy": 0.5426801910393877,
+      "lift_progress": 0.08906765642166137,
+      "ee_object_distance": 0.11829056482800719,
+      "held_local_z": 0.08218473196029663
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_staged_50",
+      "episode": 16,
+      "capture_index": 2,
+      "task_id": "blue_to_yellow",
+      "object_name": "blue_block",
+      "zone_name": "yellow_zone",
+      "object_zone_distance_xy": 0.48181999183463525,
+      "lift_progress": 0.08233885903492777,
+      "ee_object_distance": 0.09004569460879022,
+      "held_local_z": 0.08902120590209961
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_staged_50",
+      "episode": 17,
+      "capture_index": 2,
+      "task_id": "yellow_to_blue",
+      "object_name": "yellow_block",
+      "zone_name": "blue_zone",
+      "object_zone_distance_xy": 0.4716697722751706,
+      "lift_progress": 0.0818943597552747,
+      "ee_object_distance": 0.08977271049180935,
+      "held_local_z": 0.08962845802307129
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_staged_50",
+      "episode": 19,
+      "capture_index": 2,
+      "task_id": "blue_to_yellow",
+      "object_name": "blue_block",
+      "zone_name": "yellow_zone",
+      "object_zone_distance_xy": 0.40153403001155824,
+      "lift_progress": 0.07957416206026158,
+      "ee_object_distance": 0.09017870297043996,
+      "held_local_z": 0.08988690376281738
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_staged_50",
+      "episode": 21,
+      "capture_index": 2,
+      "task_id": "red_to_green",
+      "object_name": "red_block",
+      "zone_name": "green_zone",
+      "object_zone_distance_xy": 0.48229655055622783,
+      "lift_progress": 0.08131897990242831,
+      "ee_object_distance": 0.0906478859965894,
+      "held_local_z": 0.09044891595840454
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_staged_50",
+      "episode": 23,
+      "capture_index": 2,
+      "task_id": "yellow_to_blue",
+      "object_name": "yellow_block",
+      "zone_name": "blue_zone",
+      "object_zone_distance_xy": 0.46818902452627853,
+      "lift_progress": 0.08130794110137263,
+      "ee_object_distance": 0.09153732037172295,
+      "held_local_z": 0.08973157405853271
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_staged_50",
+      "episode": 27,
+      "capture_index": 2,
+      "task_id": "red_to_green",
+      "object_name": "red_block",
+      "zone_name": "green_zone",
+      "object_zone_distance_xy": 0.41933286493764,
+      "lift_progress": 0.08777492785405205,
+      "ee_object_distance": 0.082476480629813,
+      "held_local_z": 0.08193939924240112
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_staged_50",
+      "episode": 39,
+      "capture_index": 2,
+      "task_id": "red_to_green",
+      "object_name": "red_block",
+      "zone_name": "green_zone",
+      "object_zone_distance_xy": 0.5694442211116696,
+      "lift_progress": 0.0891557520866394,
+      "ee_object_distance": 0.12258925335785308,
+      "held_local_z": 0.08232402801513672
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_staged_50",
+      "episode": 44,
+      "capture_index": 2,
+      "task_id": "yellow_to_blue",
+      "object_name": "yellow_block",
+      "zone_name": "blue_zone",
+      "object_zone_distance_xy": 0.5159873830485416,
+      "lift_progress": 0.0822635917381076,
+      "ee_object_distance": 0.08956080942580984,
+      "held_local_z": 0.08948147296905518
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_staged_50",
+      "episode": 46,
+      "capture_index": 2,
+      "task_id": "blue_to_yellow",
+      "object_name": "blue_block",
+      "zone_name": "yellow_zone",
+      "object_zone_distance_xy": 0.48053991279594854,
+      "lift_progress": 0.08031520884245535,
+      "ee_object_distance": 0.09183603009367611,
+      "held_local_z": 0.0910915732383728
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_staged_50",
+      "episode": 49,
+      "capture_index": 2,
+      "task_id": "blue_to_yellow",
+      "object_name": "blue_block",
+      "zone_name": "yellow_zone",
+      "object_zone_distance_xy": 0.5690030446497322,
+      "lift_progress": 0.0898128336906433,
+      "ee_object_distance": 0.11578087464049484,
+      "held_local_z": 0.08213543891906738
+    }
+  ]
+}

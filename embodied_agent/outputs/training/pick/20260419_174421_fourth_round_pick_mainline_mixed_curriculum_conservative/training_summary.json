@@ -1,0 +1,42 @@
+{
+  "skill": "pick",
+  "algorithm": "sac",
+  "seed": 7,
+  "total_timesteps": 50000,
+  "run_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_174421_fourth_round_pick_mainline_mixed_curriculum_conservative",
+  "final_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_174421_fourth_round_pick_mainline_mixed_curriculum_conservative/final_model.zip",
+  "policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_174421_fourth_round_pick_mainline_mixed_curriculum_conservative/policy_manifest.json",
+  "best_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_174421_fourth_round_pick_mainline_mixed_curriculum_conservative/best_model/best_model.zip",
+  "best_policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_174421_fourth_round_pick_mainline_mixed_curriculum_conservative/best_policy_manifest.json",
+  "success_curve_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_174421_fourth_round_pick_mainline_mixed_curriculum_conservative/success_rate_curve.png",
+  "best_success_rate": 0.85,
+  "best_mean_reward": 188.11826176948668,
+  "curriculum_stages": [
+    {
+      "label": "fixed_layout_long_bootstrap",
+      "until_timestep": 18000,
+      "randomize_probability": 0.0
+    },
+    {
+      "label": "very_light_randomize",
+      "until_timestep": 30000,
+      "randomize_probability": 0.15
+    },
+    {
+      "label": "light_randomize",
+      "until_timestep": 38000,
+      "randomize_probability": 0.35
+    },
+    {
+      "label": "medium_randomize",
+      "until_timestep": 45000,
+      "randomize_probability": 0.6
+    },
+    {
+      "label": "full_randomize_finish",
+      "until_timestep": 50000,
+      "randomize_probability": 1.0
+    }
+  ],
+  "expert_warmstart": null
+}

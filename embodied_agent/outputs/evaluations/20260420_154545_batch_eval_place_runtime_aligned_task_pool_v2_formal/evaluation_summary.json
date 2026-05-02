@@ -1,0 +1,99 @@
+{
+  "experiments": [
+    {
+      "name": "task_pool_v2_formal_staged_50",
+      "episodes": 50,
+      "success_rate": 0.48,
+      "mean_goal_distance_xy": 0.2618095248072508,
+      "fallback_to_scripted": false,
+      "task_pool_size": 3,
+      "learned_skills": {
+        "place": {
+          "skill_name": "place",
+          "algorithm": "sac",
+          "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_153811_formal_task_pool_v2_run1/best_model_snapshot_for_eval.zip",
+          "max_steps": 32,
+          "action_repeat": 12,
+          "action_scale": 0.03,
+          "deterministic": true,
+          "use_staging": true
+        }
+      },
+      "recovery": {
+        "mean_replan_count": 0.52,
+        "max_replan_count": 1,
+        "episodes_with_replan": 26,
+        "successful_recovery_episodes": 0,
+        "recovery_success_rate": 0.0,
+        "episodes_with_step_failures": 26,
+        "total_step_failures": 52,
+        "failure_source_counts": {
+          "execution_error": 52
+        },
+        "failure_action_counts": {
+          "place": 52
+        },
+        "recovery_policy_counts": {
+          "repick_then_place": 26
+        }
+      },
+      "runtime_alignment": {
+        "episodes_with_post_pick_states": 50,
+        "episodes_with_place_entry_states": 50,
+        "stage_counts": {
+          "post_pick_success": 76,
+          "pre_place_runtime_raw": 76,
+          "pre_place_policy_entry": 76
+        }
+      }
+    },
+    {
+      "name": "task_pool_v2_formal_raw_50",
+      "episodes": 50,
+      "success_rate": 0.08,
+      "mean_goal_distance_xy": 0.2162074550575066,
+      "fallback_to_scripted": false,
+      "task_pool_size": 3,
+      "learned_skills": {
+        "place": {
+          "skill_name": "place",
+          "algorithm": "sac",
+          "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_153811_formal_task_pool_v2_run1/best_model_snapshot_for_eval.zip",
+          "max_steps": 32,
+          "action_repeat": 12,
+          "action_scale": 0.03,
+          "deterministic": true,
+          "use_staging": false
+        }
+      },
+      "recovery": {
+        "mean_replan_count": 0.92,
+        "max_replan_count": 1,
+        "episodes_with_replan": 46,
+        "successful_recovery_episodes": 0,
+        "recovery_success_rate": 0.0,
+        "episodes_with_step_failures": 46,
+        "total_step_failures": 92,
+        "failure_source_counts": {
+          "execution_error": 92
+        },
+        "failure_action_counts": {
+          "place": 92
+        },
+        "recovery_policy_counts": {
+          "repick_then_place": 33,
+          "retry_place_only": 13
+        }
+      },
+      "runtime_alignment": {
+        "episodes_with_post_pick_states": 50,
+        "episodes_with_place_entry_states": 50,
+        "stage_counts": {
+          "post_pick_success": 83,
+          "pre_place_runtime_raw": 96,
+          "pre_place_policy_entry": 96
+        }
+      }
+    }
+  ]
+}

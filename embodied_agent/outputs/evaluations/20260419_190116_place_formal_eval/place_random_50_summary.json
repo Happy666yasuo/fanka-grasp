@@ -1,0 +1,33 @@
+{
+  "name": "place_random_50",
+  "skill": "place",
+  "episodes": 50,
+  "randomize": true,
+  "success_rate": 1.0,
+  "success_count": 50,
+  "success_ci95_low": 0.9286499658256813,
+  "success_ci95_high": 1.0,
+  "mean_episode_reward": 12.204702094725656,
+  "mean_episode_length": 1,
+  "skill_policy": {
+    "skill_name": "place",
+    "algorithm": "sac",
+    "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260415_203629_formal_place_baseline_v1/best_model/best_model.zip",
+    "max_steps": 16,
+    "action_repeat": 12,
+    "action_scale": 0.015,
+    "deterministic": true
+  },
+  "place_policy": {
+    "skill_name": "place",
+    "algorithm": "sac",
+    "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260415_203629_formal_place_baseline_v1/best_model/best_model.zip",
+    "max_steps": 16,
+    "action_repeat": 12,
+    "action_scale": 0.015,
+    "deterministic": true
+  },
+  "mean_final_object_zone_distance_xy": 0.02117731228318768,
+  "mean_final_object_height": 0.6377500188529193,
+  "mean_final_holding_flag": 1.0
+}

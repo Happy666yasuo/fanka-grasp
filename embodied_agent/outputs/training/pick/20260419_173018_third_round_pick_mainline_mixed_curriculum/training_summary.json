@@ -1,0 +1,42 @@
+{
+  "skill": "pick",
+  "algorithm": "sac",
+  "seed": 7,
+  "total_timesteps": 50000,
+  "run_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_173018_third_round_pick_mainline_mixed_curriculum",
+  "final_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_173018_third_round_pick_mainline_mixed_curriculum/final_model.zip",
+  "policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_173018_third_round_pick_mainline_mixed_curriculum/policy_manifest.json",
+  "best_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_173018_third_round_pick_mainline_mixed_curriculum/best_model/best_model.zip",
+  "best_policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_173018_third_round_pick_mainline_mixed_curriculum/best_policy_manifest.json",
+  "success_curve_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_173018_third_round_pick_mainline_mixed_curriculum/success_rate_curve.png",
+  "best_success_rate": 0.85,
+  "best_mean_reward": 188.11826176948668,
+  "curriculum_stages": [
+    {
+      "label": "fixed_layout_bootstrap",
+      "until_timestep": 10000,
+      "randomize_probability": 0.0
+    },
+    {
+      "label": "light_randomize",
+      "until_timestep": 22000,
+      "randomize_probability": 0.25
+    },
+    {
+      "label": "medium_randomize",
+      "until_timestep": 34000,
+      "randomize_probability": 0.5
+    },
+    {
+      "label": "strong_randomize",
+      "until_timestep": 42000,
+      "randomize_probability": 0.75
+    },
+    {
+      "label": "full_randomize",
+      "until_timestep": 50000,
+      "randomize_probability": 1.0
+    }
+  ],
+  "expert_warmstart": null
+}

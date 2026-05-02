@@ -1,0 +1,38 @@
+{
+  "scene_id": "scene_causal_eval_v3_smoke_causal_ep002",
+  "object_id": "blue_block",
+  "object_category": "rigid_block",
+  "property_belief": {
+    "mass": {
+      "label": "light",
+      "confidence": 0.78
+    },
+    "friction": {
+      "label": "medium",
+      "confidence": 0.72
+    },
+    "joint_type": {
+      "label": "none",
+      "confidence": 0.95
+    }
+  },
+  "affordance_candidates": [
+    {
+      "name": "graspable",
+      "confidence": 0.88
+    },
+    {
+      "name": "pushable",
+      "confidence": 0.95
+    }
+  ],
+  "uncertainty_score": 0.050000000000000044,
+  "recommended_probe": "lateral_push",
+  "contact_region": "side_center",
+  "skill_constraints": {
+    "preferred_skill": "pick",
+    "max_force": 12.0,
+    "approach_axis": "top_down"
+  },
+  "evidence_path": "evidence/blue_block_lateral_push.json"
+}

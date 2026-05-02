@@ -1,0 +1,64 @@
+algo: sac
+skill: pick
+seed: 7
+total_timesteps: 50000
+output_root: /home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs
+policy: MlpPolicy
+expert_episodes: 0
+expert_noise_std: 0.05
+expert_pretrain_steps: 0
+env:
+  object_name: red_block
+  zone_name: green_zone
+  max_steps: 20
+  action_scale: 0.04
+  action_repeat: 30
+  randomize: false
+  seed: 7
+  use_staging: true
+eval_env:
+  object_name: red_block
+  zone_name: green_zone
+  max_steps: 20
+  action_scale: 0.04
+  action_repeat: 30
+  randomize: true
+  seed: 7
+  use_staging: true
+curriculum:
+  stages:
+  - label: fixed_layout_bootstrap
+    until_timestep: 10000
+    randomize_probability: 0.0
+  - label: light_randomize
+    until_timestep: 22000
+    randomize_probability: 0.25
+  - label: medium_randomize
+    until_timestep: 34000
+    randomize_probability: 0.5
+  - label: strong_randomize
+    until_timestep: 42000
+    randomize_probability: 0.75
+  - label: full_randomize
+    until_timestep: 50000
+    randomize_probability: 1.0
+algo_kwargs:
+  learning_rate: 0.0003
+  buffer_size: 100000
+  learning_starts: 1000
+  batch_size: 256
+  gamma: 0.99
+  tau: 0.005
+  train_freq: 1
+  gradient_steps: 2
+  ent_coef: 0.01
+  policy_kwargs:
+    net_arch:
+    - 256
+    - 256
+    use_sde: false
+eval:
+  episodes: 20
+  eval_freq: 2000
+  deterministic: true
+  early_stop_success_rate: 0.95

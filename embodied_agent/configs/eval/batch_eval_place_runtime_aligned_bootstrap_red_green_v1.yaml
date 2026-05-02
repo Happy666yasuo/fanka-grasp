@@ -1,0 +1,42 @@
+output_root: outputs
+
+experiments:
+  - name: runtime_aligned_bootstrap_red_green_staged_50
+    episodes: 50
+    randomize: true
+    seed: 7
+    fallback_to_scripted: false
+    skills:
+      place:
+        algorithm: sac
+        model_path: ../../outputs/training/place/20260420_135606_runtime_aligned_bootstrap_red_green_v1/best_model_snapshot_20k.zip
+        max_steps: 32
+        action_repeat: 12
+        action_scale: 0.03
+        deterministic: true
+        use_staging: true
+    task_pool:
+      - task_id: red_to_green
+        instruction: put the red block in the green zone
+        object_name: red_block
+        zone_name: green_zone
+
+  - name: runtime_aligned_bootstrap_red_green_raw_50
+    episodes: 50
+    randomize: true
+    seed: 7
+    fallback_to_scripted: false
+    skills:
+      place:
+        algorithm: sac
+        model_path: ../../outputs/training/place/20260420_135606_runtime_aligned_bootstrap_red_green_v1/best_model_snapshot_20k.zip
+        max_steps: 32
+        action_repeat: 12
+        action_scale: 0.03
+        deterministic: true
+        use_staging: false
+    task_pool:
+      - task_id: red_to_green
+        instruction: put the red block in the green zone
+        object_name: red_block
+        zone_name: green_zone

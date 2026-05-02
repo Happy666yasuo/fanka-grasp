@@ -1,0 +1,391 @@
+{
+  "manifests": [
+    {
+      "object_id": "red_block",
+      "object_category": "block",
+      "scene_id": "default_scene",
+      "expected_properties": [
+        "movable",
+        "pressable"
+      ],
+      "candidate_affordances": [
+        "pushable",
+        "graspable"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "strategy_name": "random",
+      "object_id": "red_block",
+      "total_steps": 4,
+      "property_beliefs": {
+        "movable": 0.8666666666666667,
+        "pressable": 0.43000000000000005
+      },
+      "affordance_candidates": {
+        "pushable": 0.85,
+        "graspable": 0.5
+      },
+      "property_accuracy": 0.6483333333333334,
+      "affordance_accuracy": 0.675,
+      "avg_displacement": 0.07024999999999995,
+      "unique_probes_used": 3,
+      "wall_time_seconds": 0.002600340999833861,
+      "step_results": [
+        {
+          "probe_name": "lateral_push",
+          "object_name": "red_block",
+          "success": true,
+          "pre_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "post_position": [
+            0.69,
+            0.1,
+            0.645
+          ],
+          "displacement": [
+            0.1399999999999999,
+            0.0,
+            0.0
+          ],
+          "displacement_magnitude": 0.1399999999999999,
+          "contact_detected": true,
+          "observations": {
+            "direction": "right",
+            "push_distance": 0.08
+          }
+        },
+        {
+          "probe_name": "side_pull",
+          "object_name": "red_block",
+          "success": false,
+          "pre_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "post_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "displacement_magnitude": 0.0,
+          "contact_detected": false,
+          "observations": {
+            "direction": "left",
+            "pull_distance": 0.06
+          }
+        },
+        {
+          "probe_name": "top_press",
+          "object_name": "red_block",
+          "success": true,
+          "pre_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "post_position": [
+            0.55,
+            0.1,
+            0.644
+          ],
+          "displacement": [
+            0.0,
+            0.0,
+            -0.0010000000000000009
+          ],
+          "displacement_magnitude": 0.0010000000000000009,
+          "contact_detected": true,
+          "observations": {
+            "press_depth": 0.02,
+            "z_delta": 0.0010000000000000009
+          }
+        },
+        {
+          "probe_name": "lateral_push",
+          "object_name": "red_block",
+          "success": true,
+          "pre_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "post_position": [
+            0.69,
+            0.1,
+            0.645
+          ],
+          "displacement": [
+            0.1399999999999999,
+            0.0,
+            0.0
+          ],
+          "displacement_magnitude": 0.1399999999999999,
+          "contact_detected": true,
+          "observations": {
+            "direction": "right",
+            "push_distance": 0.08
+          }
+        }
+      ]
+    },
+    {
+      "strategy_name": "curiosity",
+      "object_id": "red_block",
+      "total_steps": 4,
+      "property_beliefs": {
+        "movable": 0.8666666666666667,
+        "pressable": 0.5
+      },
+      "affordance_candidates": {
+        "pushable": 0.85,
+        "graspable": 0.85
+      },
+      "property_accuracy": 0.6833333333333333,
+      "affordance_accuracy": 0.85,
+      "avg_displacement": 0.09999999999999998,
+      "unique_probes_used": 3,
+      "wall_time_seconds": 0.002048691000254621,
+      "step_results": [
+        {
+          "probe_name": "grasp_attempt",
+          "object_name": "red_block",
+          "success": true,
+          "pre_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "post_position": [
+            0.55,
+            0.1,
+            0.7650000000000001
+          ],
+          "displacement": [
+            0.0,
+            0.0,
+            0.1200000000000001
+          ],
+          "displacement_magnitude": 0.1200000000000001,
+          "contact_detected": true,
+          "observations": {
+            "graspable": true,
+            "lift_height": 0.1200000000000001
+          }
+        },
+        {
+          "probe_name": "side_pull",
+          "object_name": "red_block",
+          "success": false,
+          "pre_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "post_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "displacement_magnitude": 0.0,
+          "contact_detected": false,
+          "observations": {
+            "direction": "left",
+            "pull_distance": 0.06
+          }
+        },
+        {
+          "probe_name": "lateral_push",
+          "object_name": "red_block",
+          "success": true,
+          "pre_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "post_position": [
+            0.69,
+            0.1,
+            0.645
+          ],
+          "displacement": [
+            0.1399999999999999,
+            0.0,
+            0.0
+          ],
+          "displacement_magnitude": 0.1399999999999999,
+          "contact_detected": true,
+          "observations": {
+            "direction": "right",
+            "push_distance": 0.08
+          }
+        },
+        {
+          "probe_name": "lateral_push",
+          "object_name": "red_block",
+          "success": true,
+          "pre_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "post_position": [
+            0.69,
+            0.1,
+            0.645
+          ],
+          "displacement": [
+            0.1399999999999999,
+            0.0,
+            0.0
+          ],
+          "displacement_magnitude": 0.1399999999999999,
+          "contact_detected": true,
+          "observations": {
+            "direction": "right",
+            "push_distance": 0.08
+          }
+        }
+      ]
+    },
+    {
+      "strategy_name": "causal_explore",
+      "object_id": "red_block",
+      "total_steps": 4,
+      "property_beliefs": {
+        "movable": 0.8,
+        "pressable": 0.21500000000000002
+      },
+      "affordance_candidates": {
+        "pushable": 0.85,
+        "graspable": 0.5
+      },
+      "property_accuracy": 0.5075000000000001,
+      "affordance_accuracy": 0.675,
+      "avg_displacement": 0.035249999999999976,
+      "unique_probes_used": 4,
+      "wall_time_seconds": 0.00197434300025634,
+      "step_results": [
+        {
+          "probe_name": "lateral_push",
+          "object_name": "red_block",
+          "success": true,
+          "pre_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "post_position": [
+            0.69,
+            0.1,
+            0.645
+          ],
+          "displacement": [
+            0.1399999999999999,
+            0.0,
+            0.0
+          ],
+          "displacement_magnitude": 0.1399999999999999,
+          "contact_detected": true,
+          "observations": {
+            "direction": "right",
+            "push_distance": 0.08
+          }
+        },
+        {
+          "probe_name": "top_press",
+          "object_name": "red_block",
+          "success": true,
+          "pre_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "post_position": [
+            0.55,
+            0.1,
+            0.644
+          ],
+          "displacement": [
+            0.0,
+            0.0,
+            -0.0010000000000000009
+          ],
+          "displacement_magnitude": 0.0010000000000000009,
+          "contact_detected": true,
+          "observations": {
+            "press_depth": 0.02,
+            "z_delta": 0.0010000000000000009
+          }
+        },
+        {
+          "probe_name": "side_pull",
+          "object_name": "red_block",
+          "success": false,
+          "pre_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "post_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "displacement_magnitude": 0.0,
+          "contact_detected": false,
+          "observations": {
+            "direction": "left",
+            "pull_distance": 0.06
+          }
+        },
+        {
+          "probe_name": "surface_tap",
+          "object_name": "red_block",
+          "success": false,
+          "pre_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "post_position": [
+            0.55,
+            0.1,
+            0.645
+          ],
+          "displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "displacement_magnitude": 0.0,
+          "contact_detected": false,
+          "observations": {
+            "tap_height": 0.1,
+            "z_delta": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}

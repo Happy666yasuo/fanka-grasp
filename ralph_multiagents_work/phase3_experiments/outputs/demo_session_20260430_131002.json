@@ -1,0 +1,245 @@
+{
+  "session_id": "20260430_131002",
+  "config": {
+    "headless": true,
+    "record": true,
+    "max_replans": 3,
+    "language": "zh"
+  },
+  "results": [
+    {
+      "scenario": "multi_block",
+      "task": "把红色方块移到绿色区域",
+      "success": true,
+      "plan_steps": [
+        {
+          "step_index": 0,
+          "skill": "observe",
+          "target": null,
+          "args": {}
+        },
+        {
+          "step_index": 1,
+          "skill": "pick",
+          "target": "red_block",
+          "args": {
+            "zone": "green_zone"
+          }
+        },
+        {
+          "step_index": 2,
+          "skill": "place",
+          "target": "red_block",
+          "args": {
+            "object": "red_block",
+            "target_zone": "green_zone"
+          }
+        }
+      ],
+      "executed_actions": [
+        "observe",
+        "pick",
+        "place"
+      ],
+      "explore_steps": 0,
+      "replan_count": 0,
+      "error": null,
+      "execution_time_seconds": 0.00020306599617470056,
+      "feedback_notes": [
+        "Plan: observe → pick → place"
+      ]
+    },
+    {
+      "scenario": "multi_block",
+      "task": "把蓝色方块移到黄色区域",
+      "success": true,
+      "plan_steps": [
+        {
+          "step_index": 0,
+          "skill": "observe",
+          "target": null,
+          "args": {}
+        },
+        {
+          "step_index": 1,
+          "skill": "pick",
+          "target": "blue_block",
+          "args": {
+            "zone": "yellow_zone"
+          }
+        },
+        {
+          "step_index": 2,
+          "skill": "place",
+          "target": "blue_block",
+          "args": {
+            "object": "blue_block",
+            "target_zone": "yellow_zone"
+          }
+        },
+        {
+          "step_index": 3,
+          "skill": "pick",
+          "target": "yellow_block",
+          "args": {
+            "zone": "yellow_zone"
+          }
+        },
+        {
+          "step_index": 4,
+          "skill": "place",
+          "target": "yellow_block",
+          "args": {
+            "object": "yellow_block",
+            "target_zone": "yellow_zone"
+          }
+        }
+      ],
+      "executed_actions": [
+        "observe",
+        "pick",
+        "place",
+        "pick",
+        "place"
+      ],
+      "explore_steps": 0,
+      "replan_count": 0,
+      "error": null,
+      "execution_time_seconds": 0.00015589599934173748,
+      "feedback_notes": [
+        "Plan: observe → pick → place → pick → place"
+      ]
+    },
+    {
+      "scenario": "multi_block",
+      "task": "把黄色方块移到蓝色区域",
+      "success": true,
+      "plan_steps": [
+        {
+          "step_index": 0,
+          "skill": "observe",
+          "target": null,
+          "args": {}
+        },
+        {
+          "step_index": 1,
+          "skill": "pick",
+          "target": "blue_block",
+          "args": {
+            "zone": "blue_zone"
+          }
+        },
+        {
+          "step_index": 2,
+          "skill": "place",
+          "target": "blue_block",
+          "args": {
+            "object": "blue_block",
+            "target_zone": "blue_zone"
+          }
+        },
+        {
+          "step_index": 3,
+          "skill": "pick",
+          "target": "yellow_block",
+          "args": {
+            "zone": "blue_zone"
+          }
+        },
+        {
+          "step_index": 4,
+          "skill": "place",
+          "target": "yellow_block",
+          "args": {
+            "object": "yellow_block",
+            "target_zone": "blue_zone"
+          }
+        }
+      ],
+      "executed_actions": [
+        "observe",
+        "pick",
+        "place",
+        "pick",
+        "place"
+      ],
+      "explore_steps": 0,
+      "replan_count": 0,
+      "error": null,
+      "execution_time_seconds": 0.0001785990025382489,
+      "feedback_notes": [
+        "Plan: observe → pick → place → pick → place"
+      ]
+    },
+    {
+      "scenario": "interactive",
+      "task": "探索鼠标的功能：先按压鼠标顶部，然后向前拖动鼠标，最后滚动滚轮",
+      "success": true,
+      "plan_steps": [
+        {
+          "step_index": 0,
+          "skill": "observe",
+          "target": null,
+          "args": {}
+        },
+        {
+          "step_index": 1,
+          "skill": "probe",
+          "target": "mouse",
+          "args": {
+            "probe": "top_press"
+          }
+        },
+        {
+          "step_index": 2,
+          "skill": "press",
+          "target": "mouse",
+          "args": {
+            "press_direction": "down",
+            "force": 0.5
+          }
+        },
+        {
+          "step_index": 3,
+          "skill": "push",
+          "target": "mouse",
+          "args": {
+            "push_direction": "forward",
+            "distance": 0.1
+          }
+        },
+        {
+          "step_index": 4,
+          "skill": "rotate",
+          "target": "mouse",
+          "args": {
+            "rotation_axis": "z",
+            "angle_deg": 30
+          }
+        }
+      ],
+      "executed_actions": [
+        "observe",
+        "probe",
+        "press",
+        "push",
+        "rotate"
+      ],
+      "explore_steps": 1,
+      "replan_count": 0,
+      "error": null,
+      "execution_time_seconds": 0.00011251399700995535,
+      "feedback_notes": [
+        "Plan: observe → probe → press → push → rotate",
+        "Interactive object inference: mouse affordances explored via CausalExplore"
+      ]
+    }
+  ],
+  "summary": {
+    "total_scenarios": 4,
+    "successful": 4,
+    "failed": 0,
+    "success_rate": 1.0,
+    "avg_execution_time": 0.00016251874876616057
+  }
+}

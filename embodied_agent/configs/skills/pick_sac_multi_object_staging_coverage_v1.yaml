@@ -1,0 +1,59 @@
+algo: sac
+skill: pick
+seed: 7
+total_timesteps: 30000
+output_root: outputs
+policy: MlpPolicy
+
+expert_episodes: 80
+expert_noise_std: 0.03
+expert_pretrain_steps: 500
+
+env:
+  object_name: red_block
+  zone_name: green_zone
+  max_steps: 20
+  action_scale: 0.04
+  action_repeat: 30
+  randomize: true
+  seed: 7
+  use_staging: true
+  object_x_range: [0.40, 0.68]
+  object_y_range: [-0.16, -0.02]
+  zone_x_range: [0.40, 0.68]
+  zone_y_range: [0.12, 0.24]
+
+eval_env:
+  object_name: red_block
+  zone_name: green_zone
+  max_steps: 20
+  action_scale: 0.04
+  action_repeat: 30
+  randomize: true
+  seed: 7
+  use_staging: true
+  object_x_range: [0.40, 0.68]
+  object_y_range: [-0.16, -0.02]
+  zone_x_range: [0.40, 0.68]
+  zone_y_range: [0.12, 0.24]
+
+algo_kwargs:
+  learning_rate: 0.0003
+  buffer_size: 100000
+  learning_starts: 1000
+  batch_size: 256
+  gamma: 0.99
+  tau: 0.005
+  train_freq: 1
+  gradient_steps: 2
+  ent_coef: 0.01
+  policy_kwargs:
+    net_arch:
+      - 256
+      - 256
+
+eval:
+  episodes: 20
+  eval_freq: 2000
+  deterministic: true
+  early_stop_success_rate: 0.95

@@ -1,0 +1,27 @@
+{
+  "name": "scripted_multi_object_smoke",
+  "episodes": 12,
+  "success_rate": 1.0,
+  "mean_goal_distance_xy": 0.005500626834145531,
+  "fallback_to_scripted": true,
+  "task_pool_size": 3,
+  "learned_skills": {},
+  "recovery": {
+    "mean_replan_count": 0.08333333333333333,
+    "max_replan_count": 1,
+    "episodes_with_replan": 1,
+    "successful_recovery_episodes": 1,
+    "recovery_success_rate": 1.0,
+    "episodes_with_step_failures": 1,
+    "total_step_failures": 1,
+    "failure_source_counts": {
+      "post_condition_failed": 1
+    },
+    "failure_action_counts": {
+      "place": 1
+    },
+    "recovery_policy_counts": {
+      "repick_then_place": 1
+    }
+  }
+}

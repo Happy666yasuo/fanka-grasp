@@ -1,0 +1,271 @@
+{
+  "config": {
+    "tasks": [
+      "把红色方块移到绿色区域",
+      "把蓝色方块移到黄色区域",
+      "把黄色方块移到蓝色区域",
+      "把红色方块放到绿色区域里，然后把蓝色方块移到黄色区域"
+    ],
+    "headless": true,
+    "max_replans": 3,
+    "conditions": [
+      "no_causal",
+      "metadata_backed",
+      "simulator_backed"
+    ]
+  },
+  "results": [
+    {
+      "condition": "no_causal",
+      "task": "把红色方块移到绿色区域",
+      "success": true,
+      "total_steps": 3,
+      "explore_steps": 0,
+      "planning_quality": 0.7000000000000001,
+      "replan_count": 0,
+      "execution_time_seconds": 0.000544045999959053,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place"
+      ],
+      "failure_details": [],
+      "fallback_used": false
+    },
+    {
+      "condition": "metadata_backed",
+      "task": "把红色方块移到绿色区域",
+      "success": true,
+      "total_steps": 3,
+      "explore_steps": 0,
+      "planning_quality": 0.7000000000000001,
+      "replan_count": 0,
+      "execution_time_seconds": 0.00021793199994135648,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place"
+      ],
+      "failure_details": [],
+      "fallback_used": false
+    },
+    {
+      "condition": "simulator_backed",
+      "task": "把红色方块移到绿色区域",
+      "success": true,
+      "total_steps": 4,
+      "explore_steps": 4,
+      "planning_quality": 0.675,
+      "replan_count": 0,
+      "execution_time_seconds": 0.00320053900009043,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "failure_details": [],
+      "fallback_used": false
+    },
+    {
+      "condition": "no_causal",
+      "task": "把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 3,
+      "explore_steps": 0,
+      "planning_quality": 0.7000000000000001,
+      "replan_count": 0,
+      "execution_time_seconds": 0.00010643299992807442,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place"
+      ],
+      "failure_details": [],
+      "fallback_used": false
+    },
+    {
+      "condition": "metadata_backed",
+      "task": "把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 3,
+      "explore_steps": 0,
+      "planning_quality": 0.7000000000000001,
+      "replan_count": 0,
+      "execution_time_seconds": 0.0001407479999215866,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place"
+      ],
+      "failure_details": [],
+      "fallback_used": false
+    },
+    {
+      "condition": "simulator_backed",
+      "task": "把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 4,
+      "explore_steps": 4,
+      "planning_quality": 0.675,
+      "replan_count": 0,
+      "execution_time_seconds": 0.0026843059999919205,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "failure_details": [],
+      "fallback_used": false
+    },
+    {
+      "condition": "no_causal",
+      "task": "把黄色方块移到蓝色区域",
+      "success": true,
+      "total_steps": 3,
+      "explore_steps": 0,
+      "planning_quality": 0.7000000000000001,
+      "replan_count": 0,
+      "execution_time_seconds": 0.00010548999989623553,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place"
+      ],
+      "failure_details": [],
+      "fallback_used": false
+    },
+    {
+      "condition": "metadata_backed",
+      "task": "把黄色方块移到蓝色区域",
+      "success": true,
+      "total_steps": 3,
+      "explore_steps": 0,
+      "planning_quality": 0.7000000000000001,
+      "replan_count": 0,
+      "execution_time_seconds": 0.00015023799983282515,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place"
+      ],
+      "failure_details": [],
+      "fallback_used": false
+    },
+    {
+      "condition": "simulator_backed",
+      "task": "把黄色方块移到蓝色区域",
+      "success": true,
+      "total_steps": 4,
+      "explore_steps": 4,
+      "planning_quality": 0.675,
+      "replan_count": 0,
+      "execution_time_seconds": 0.003126717999975881,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "failure_details": [],
+      "fallback_used": false
+    },
+    {
+      "condition": "no_causal",
+      "task": "把红色方块放到绿色区域里，然后把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 5,
+      "explore_steps": 0,
+      "planning_quality": 0.82,
+      "replan_count": 0,
+      "execution_time_seconds": 0.0001456620000226394,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place",
+        "pick",
+        "place"
+      ],
+      "failure_details": [],
+      "fallback_used": false
+    },
+    {
+      "condition": "metadata_backed",
+      "task": "把红色方块放到绿色区域里，然后把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 5,
+      "explore_steps": 0,
+      "planning_quality": 0.82,
+      "replan_count": 0,
+      "execution_time_seconds": 0.00017560600008437177,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place",
+        "pick",
+        "place"
+      ],
+      "failure_details": [],
+      "fallback_used": false
+    },
+    {
+      "condition": "simulator_backed",
+      "task": "把红色方块放到绿色区域里，然后把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 6,
+      "explore_steps": 8,
+      "planning_quality": 0.7833333333333333,
+      "replan_count": 0,
+      "execution_time_seconds": 0.006412494999949558,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place",
+        "pick",
+        "place"
+      ],
+      "failure_details": [],
+      "fallback_used": false
+    }
+  ],
+  "summary": {
+    "metadata_backed": {
+      "num_trials": 4,
+      "success_rate": 1.0,
+      "avg_explore_steps": 0.0,
+      "avg_planning_quality": 0.73,
+      "avg_replan_count": 0.0,
+      "avg_execution_time": 0.000171130999945035
+    },
+    "no_causal": {
+      "num_trials": 4,
+      "success_rate": 1.0,
+      "avg_explore_steps": 0.0,
+      "avg_planning_quality": 0.73,
+      "avg_replan_count": 0.0,
+      "avg_execution_time": 0.0002254077499515006
+    },
+    "simulator_backed": {
+      "num_trials": 4,
+      "success_rate": 1.0,
+      "avg_explore_steps": 5.0,
+      "avg_planning_quality": 0.7020833333333334,
+      "avg_replan_count": 0.0,
+      "avg_execution_time": 0.0038560145000019475
+    }
+  }
+}

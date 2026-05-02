@@ -1,0 +1,15 @@
+{
+  "skill": "pick",
+  "algorithm": "bc",
+  "seed": 7,
+  "epochs": 120,
+  "expert_stats": {
+    "n_episodes": 300.0,
+    "n_transitions": 3983.0,
+    "success_rate": 0.42333333333333334,
+    "mean_reward": 89.161653814576
+  },
+  "best_success_rate": 0.45,
+  "best_epoch": 50,
+  "run_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260420_025924_pick_bc_multi_object_candidate_grid_v2"
+}

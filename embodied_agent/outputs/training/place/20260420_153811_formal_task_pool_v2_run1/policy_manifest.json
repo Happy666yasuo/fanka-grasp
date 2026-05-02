@@ -1,0 +1,10 @@
+{
+  "skill_name": "place",
+  "algorithm": "sac",
+  "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_153811_formal_task_pool_v2_run1/final_model.zip",
+  "max_steps": 32,
+  "action_repeat": 12,
+  "action_scale": 0.03,
+  "deterministic": true,
+  "use_staging": false
+}

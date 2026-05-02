@@ -1,0 +1,79 @@
+{
+  "experiments": [
+    {
+      "name": "scripted_baseline_50",
+      "episodes": 50,
+      "success_rate": 1.0,
+      "mean_goal_distance_xy": 2.2706127795188856e-05,
+      "fallback_to_scripted": true,
+      "learned_skills": {}
+    },
+    {
+      "name": "learned_pick_hybrid_50",
+      "episodes": 50,
+      "success_rate": 1.0,
+      "mean_goal_distance_xy": 0.011340855149360247,
+      "fallback_to_scripted": false,
+      "learned_skills": {
+        "pick": {
+          "skill_name": "pick",
+          "algorithm": "sac",
+          "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_164442_smoke_pick_mainline_regression_retry/best_model/best_model.zip",
+          "max_steps": 20,
+          "action_repeat": 30,
+          "action_scale": 0.04,
+          "deterministic": true,
+          "use_staging": true
+        }
+      }
+    },
+    {
+      "name": "learned_place_hybrid_50",
+      "episodes": 50,
+      "success_rate": 0.96,
+      "mean_goal_distance_xy": 0.0439885780901291,
+      "fallback_to_scripted": false,
+      "learned_skills": {
+        "place": {
+          "skill_name": "place",
+          "algorithm": "sac",
+          "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260419_190903_place_release_regression_v1/best_model/best_model.zip",
+          "max_steps": 16,
+          "action_repeat": 12,
+          "action_scale": 0.015,
+          "deterministic": true,
+          "use_staging": true
+        }
+      }
+    },
+    {
+      "name": "learned_pick_place_full_50",
+      "episodes": 50,
+      "success_rate": 1.0,
+      "mean_goal_distance_xy": 0.03315240298698932,
+      "fallback_to_scripted": false,
+      "learned_skills": {
+        "pick": {
+          "skill_name": "pick",
+          "algorithm": "sac",
+          "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_164442_smoke_pick_mainline_regression_retry/best_model/best_model.zip",
+          "max_steps": 20,
+          "action_repeat": 30,
+          "action_scale": 0.04,
+          "deterministic": true,
+          "use_staging": true
+        },
+        "place": {
+          "skill_name": "place",
+          "algorithm": "sac",
+          "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260419_190903_place_release_regression_v1/best_model/best_model.zip",
+          "max_steps": 16,
+          "action_repeat": 12,
+          "action_scale": 0.015,
+          "deterministic": true,
+          "use_staging": true
+        }
+      }
+    }
+  ]
+}

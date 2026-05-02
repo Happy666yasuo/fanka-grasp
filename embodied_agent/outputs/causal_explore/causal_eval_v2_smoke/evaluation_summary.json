@@ -1,0 +1,59 @@
+{
+  "version": "causal_explore_eval_v1",
+  "run_id": "causal_eval_v2_smoke",
+  "objects": [
+    "red_block",
+    "blue_block"
+  ],
+  "episodes": 3,
+  "strategies": [
+    {
+      "strategy": "random",
+      "episodes": 3,
+      "object_count": 2,
+      "mean_uncertainty": 0.0616666666666667,
+      "mean_displacement_xy": 0.20036577923032992,
+      "artifact_count": 6,
+      "planner_probe_count": 0,
+      "mean_requires_probe_rate": 0.0,
+      "actual_planner_probe_count": 0,
+      "planner_probe_rate": 0.0,
+      "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_eval_v2_smoke/random/catalog.json",
+      "episode_metrics_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_eval_v2_smoke/random/episode_metrics.jsonl",
+      "output_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_eval_v2_smoke/random"
+    },
+    {
+      "strategy": "curiosity",
+      "episodes": 3,
+      "object_count": 2,
+      "mean_uncertainty": 0.1333333333333334,
+      "mean_displacement_xy": 0.1635286064202018,
+      "artifact_count": 6,
+      "planner_probe_count": 1,
+      "mean_requires_probe_rate": 0.16666666666666666,
+      "actual_planner_probe_count": 0,
+      "planner_probe_rate": 0.0,
+      "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_eval_v2_smoke/curiosity/catalog.json",
+      "episode_metrics_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_eval_v2_smoke/curiosity/episode_metrics.jsonl",
+      "output_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_eval_v2_smoke/curiosity"
+    },
+    {
+      "strategy": "causal",
+      "episodes": 3,
+      "object_count": 2,
+      "mean_uncertainty": 0.050000000000000044,
+      "mean_displacement_xy": 0.16509249059644043,
+      "artifact_count": 6,
+      "planner_probe_count": 0,
+      "mean_requires_probe_rate": 0.0,
+      "actual_planner_probe_count": 0,
+      "planner_probe_rate": 0.0,
+      "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_eval_v2_smoke/causal/catalog.json",
+      "episode_metrics_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_eval_v2_smoke/causal/episode_metrics.jsonl",
+      "output_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_eval_v2_smoke/causal"
+    }
+  ],
+  "planner_eval_summary_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_eval_v2_smoke/planner_eval_summary.json",
+  "summary_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_eval_v2_smoke/evaluation_summary.json",
+  "output_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_eval_v2_smoke"
+}

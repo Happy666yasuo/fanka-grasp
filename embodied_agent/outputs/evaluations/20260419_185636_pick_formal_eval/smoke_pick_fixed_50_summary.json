@@ -1,0 +1,23 @@
+{
+  "name": "smoke_pick_fixed_50",
+  "episodes": 50,
+  "randomize": false,
+  "success_rate": 0.94,
+  "success_count": 47,
+  "success_ci95_low": 0.8378265662912299,
+  "success_ci95_high": 0.9793854036353695,
+  "mean_episode_reward": 210.4906502118075,
+  "mean_episode_length": 4.68,
+  "mean_final_ee_object_distance": 0.10016070153590559,
+  "mean_final_lift_progress": 0.1242613007993823,
+  "mean_final_holding_flag": 0.94,
+  "pick_policy": {
+    "skill_name": "pick",
+    "algorithm": "sac",
+    "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_164442_smoke_pick_mainline_regression_retry/best_model/best_model.zip",
+    "max_steps": 20,
+    "action_repeat": 30,
+    "action_scale": 0.04,
+    "deterministic": true
+  }
+}

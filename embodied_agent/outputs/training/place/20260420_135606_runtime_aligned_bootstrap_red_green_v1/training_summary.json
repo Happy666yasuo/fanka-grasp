@@ -1,0 +1,25 @@
+{
+  "skill": "place",
+  "algorithm": "sac",
+  "seed": 7,
+  "total_timesteps": 30000,
+  "run_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_135606_runtime_aligned_bootstrap_red_green_v1",
+  "final_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_135606_runtime_aligned_bootstrap_red_green_v1/final_model.zip",
+  "policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_135606_runtime_aligned_bootstrap_red_green_v1/policy_manifest.json",
+  "best_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_135606_runtime_aligned_bootstrap_red_green_v1/best_model/best_model.zip",
+  "best_policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_135606_runtime_aligned_bootstrap_red_green_v1/best_policy_manifest.json",
+  "success_curve_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_135606_runtime_aligned_bootstrap_red_green_v1/success_rate_curve.png",
+  "env_reset_source": "post_pick_states",
+  "env_post_pick_states_jsonl": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/datasets/red_to_green_post_pick_filtered_v1.jsonl",
+  "eval_reset_source": "post_pick_states",
+  "eval_post_pick_states_jsonl": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/datasets/red_to_green_post_pick_filtered_v1.jsonl",
+  "best_success_rate": 0.0,
+  "best_mean_reward": 7.658290059158228,
+  "curriculum_stages": [],
+  "expert_warmstart": {
+    "n_episodes": 500.0,
+    "n_transitions": 14969.0,
+    "success_rate": 0.212,
+    "mean_reward": 16.306880673979308
+  }
+}
