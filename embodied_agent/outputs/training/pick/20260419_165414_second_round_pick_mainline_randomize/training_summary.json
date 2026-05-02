@@ -1,0 +1,15 @@
+{
+  "skill": "pick",
+  "algorithm": "sac",
+  "seed": 7,
+  "total_timesteps": 50000,
+  "run_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_165414_second_round_pick_mainline_randomize",
+  "final_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_165414_second_round_pick_mainline_randomize/final_model.zip",
+  "policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_165414_second_round_pick_mainline_randomize/policy_manifest.json",
+  "best_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_165414_second_round_pick_mainline_randomize/best_model/best_model.zip",
+  "best_policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_165414_second_round_pick_mainline_randomize/best_policy_manifest.json",
+  "success_curve_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_165414_second_round_pick_mainline_randomize/success_rate_curve.png",
+  "best_success_rate": 0.1,
+  "best_mean_reward": 87.69449117257584,
+  "expert_warmstart": null
+}

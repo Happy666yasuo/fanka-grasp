@@ -1,0 +1,578 @@
+{
+  "version": "causal_explore_planner_eval_v1",
+  "run_id": "causal_system_eval_v1_smoke",
+  "strategies": [
+    {
+      "strategy": "random",
+      "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/catalog.json",
+      "catalog_count": 3,
+      "planner_eval_case_count": 6,
+      "scenario_count": 6,
+      "actual_planner_probe_count": 0,
+      "planner_probe_rate": 0.0,
+      "catalog_evaluations": [
+        {
+          "episode": 0,
+          "episode_label": "episode_000",
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/catalog.json",
+          "scenarios": [
+            {
+              "scenario": "red_to_green",
+              "instruction": "put the red block in the green zone",
+              "object_id": "red_block",
+              "zone_id": "green_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            },
+            {
+              "scenario": "blue_to_yellow",
+              "instruction": "put the blue block in the yellow zone",
+              "object_id": "blue_block",
+              "zone_id": "yellow_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            }
+          ]
+        },
+        {
+          "episode": 1,
+          "episode_label": "episode_001",
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/episodes/episode_001/catalog.json",
+          "scenarios": [
+            {
+              "scenario": "red_to_green",
+              "instruction": "put the red block in the green zone",
+              "object_id": "red_block",
+              "zone_id": "green_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            },
+            {
+              "scenario": "blue_to_yellow",
+              "instruction": "put the blue block in the yellow zone",
+              "object_id": "blue_block",
+              "zone_id": "yellow_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            }
+          ]
+        },
+        {
+          "episode": 2,
+          "episode_label": "episode_002",
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/episodes/episode_002/catalog.json",
+          "scenarios": [
+            {
+              "scenario": "red_to_green",
+              "instruction": "put the red block in the green zone",
+              "object_id": "red_block",
+              "zone_id": "green_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            },
+            {
+              "scenario": "blue_to_yellow",
+              "instruction": "put the blue block in the yellow zone",
+              "object_id": "blue_block",
+              "zone_id": "yellow_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            }
+          ]
+        }
+      ],
+      "scenarios": [
+        {
+          "episode": 0,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/catalog.json",
+          "scenario": "red_to_green",
+          "instruction": "put the red block in the green zone",
+          "object_id": "red_block",
+          "zone_id": "green_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        },
+        {
+          "episode": 0,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/catalog.json",
+          "scenario": "blue_to_yellow",
+          "instruction": "put the blue block in the yellow zone",
+          "object_id": "blue_block",
+          "zone_id": "yellow_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        },
+        {
+          "episode": 1,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/episodes/episode_001/catalog.json",
+          "scenario": "red_to_green",
+          "instruction": "put the red block in the green zone",
+          "object_id": "red_block",
+          "zone_id": "green_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        },
+        {
+          "episode": 1,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/episodes/episode_001/catalog.json",
+          "scenario": "blue_to_yellow",
+          "instruction": "put the blue block in the yellow zone",
+          "object_id": "blue_block",
+          "zone_id": "yellow_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        },
+        {
+          "episode": 2,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/episodes/episode_002/catalog.json",
+          "scenario": "red_to_green",
+          "instruction": "put the red block in the green zone",
+          "object_id": "red_block",
+          "zone_id": "green_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        },
+        {
+          "episode": 2,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/random/episodes/episode_002/catalog.json",
+          "scenario": "blue_to_yellow",
+          "instruction": "put the blue block in the yellow zone",
+          "object_id": "blue_block",
+          "zone_id": "yellow_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        }
+      ]
+    },
+    {
+      "strategy": "curiosity",
+      "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/catalog.json",
+      "catalog_count": 3,
+      "planner_eval_case_count": 6,
+      "scenario_count": 6,
+      "actual_planner_probe_count": 1,
+      "planner_probe_rate": 0.16666666666666666,
+      "catalog_evaluations": [
+        {
+          "episode": 0,
+          "episode_label": "episode_000",
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/catalog.json",
+          "scenarios": [
+            {
+              "scenario": "red_to_green",
+              "instruction": "put the red block in the green zone",
+              "object_id": "red_block",
+              "zone_id": "green_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            },
+            {
+              "scenario": "blue_to_yellow",
+              "instruction": "put the blue block in the yellow zone",
+              "object_id": "blue_block",
+              "zone_id": "yellow_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            }
+          ]
+        },
+        {
+          "episode": 1,
+          "episode_label": "episode_001",
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/episodes/episode_001/catalog.json",
+          "scenarios": [
+            {
+              "scenario": "red_to_green",
+              "instruction": "put the red block in the green zone",
+              "object_id": "red_block",
+              "zone_id": "green_zone",
+              "selected_skills": [
+                "observe",
+                "probe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": true
+            },
+            {
+              "scenario": "blue_to_yellow",
+              "instruction": "put the blue block in the yellow zone",
+              "object_id": "blue_block",
+              "zone_id": "yellow_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            }
+          ]
+        },
+        {
+          "episode": 2,
+          "episode_label": "episode_002",
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/episodes/episode_002/catalog.json",
+          "scenarios": [
+            {
+              "scenario": "red_to_green",
+              "instruction": "put the red block in the green zone",
+              "object_id": "red_block",
+              "zone_id": "green_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            },
+            {
+              "scenario": "blue_to_yellow",
+              "instruction": "put the blue block in the yellow zone",
+              "object_id": "blue_block",
+              "zone_id": "yellow_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            }
+          ]
+        }
+      ],
+      "scenarios": [
+        {
+          "episode": 0,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/catalog.json",
+          "scenario": "red_to_green",
+          "instruction": "put the red block in the green zone",
+          "object_id": "red_block",
+          "zone_id": "green_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        },
+        {
+          "episode": 0,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/catalog.json",
+          "scenario": "blue_to_yellow",
+          "instruction": "put the blue block in the yellow zone",
+          "object_id": "blue_block",
+          "zone_id": "yellow_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        },
+        {
+          "episode": 1,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/episodes/episode_001/catalog.json",
+          "scenario": "red_to_green",
+          "instruction": "put the red block in the green zone",
+          "object_id": "red_block",
+          "zone_id": "green_zone",
+          "selected_skills": [
+            "observe",
+            "probe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": true
+        },
+        {
+          "episode": 1,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/episodes/episode_001/catalog.json",
+          "scenario": "blue_to_yellow",
+          "instruction": "put the blue block in the yellow zone",
+          "object_id": "blue_block",
+          "zone_id": "yellow_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        },
+        {
+          "episode": 2,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/episodes/episode_002/catalog.json",
+          "scenario": "red_to_green",
+          "instruction": "put the red block in the green zone",
+          "object_id": "red_block",
+          "zone_id": "green_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        },
+        {
+          "episode": 2,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/curiosity/episodes/episode_002/catalog.json",
+          "scenario": "blue_to_yellow",
+          "instruction": "put the blue block in the yellow zone",
+          "object_id": "blue_block",
+          "zone_id": "yellow_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        }
+      ]
+    },
+    {
+      "strategy": "causal",
+      "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/catalog.json",
+      "catalog_count": 3,
+      "planner_eval_case_count": 6,
+      "scenario_count": 6,
+      "actual_planner_probe_count": 0,
+      "planner_probe_rate": 0.0,
+      "catalog_evaluations": [
+        {
+          "episode": 0,
+          "episode_label": "episode_000",
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/catalog.json",
+          "scenarios": [
+            {
+              "scenario": "red_to_green",
+              "instruction": "put the red block in the green zone",
+              "object_id": "red_block",
+              "zone_id": "green_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            },
+            {
+              "scenario": "blue_to_yellow",
+              "instruction": "put the blue block in the yellow zone",
+              "object_id": "blue_block",
+              "zone_id": "yellow_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            }
+          ]
+        },
+        {
+          "episode": 1,
+          "episode_label": "episode_001",
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/episodes/episode_001/catalog.json",
+          "scenarios": [
+            {
+              "scenario": "red_to_green",
+              "instruction": "put the red block in the green zone",
+              "object_id": "red_block",
+              "zone_id": "green_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            },
+            {
+              "scenario": "blue_to_yellow",
+              "instruction": "put the blue block in the yellow zone",
+              "object_id": "blue_block",
+              "zone_id": "yellow_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            }
+          ]
+        },
+        {
+          "episode": 2,
+          "episode_label": "episode_002",
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/episodes/episode_002/catalog.json",
+          "scenarios": [
+            {
+              "scenario": "red_to_green",
+              "instruction": "put the red block in the green zone",
+              "object_id": "red_block",
+              "zone_id": "green_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            },
+            {
+              "scenario": "blue_to_yellow",
+              "instruction": "put the blue block in the yellow zone",
+              "object_id": "blue_block",
+              "zone_id": "yellow_zone",
+              "selected_skills": [
+                "observe",
+                "pick",
+                "place"
+              ],
+              "inserted_probe": false
+            }
+          ]
+        }
+      ],
+      "scenarios": [
+        {
+          "episode": 0,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/catalog.json",
+          "scenario": "red_to_green",
+          "instruction": "put the red block in the green zone",
+          "object_id": "red_block",
+          "zone_id": "green_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        },
+        {
+          "episode": 0,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/catalog.json",
+          "scenario": "blue_to_yellow",
+          "instruction": "put the blue block in the yellow zone",
+          "object_id": "blue_block",
+          "zone_id": "yellow_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        },
+        {
+          "episode": 1,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/episodes/episode_001/catalog.json",
+          "scenario": "red_to_green",
+          "instruction": "put the red block in the green zone",
+          "object_id": "red_block",
+          "zone_id": "green_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        },
+        {
+          "episode": 1,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/episodes/episode_001/catalog.json",
+          "scenario": "blue_to_yellow",
+          "instruction": "put the blue block in the yellow zone",
+          "object_id": "blue_block",
+          "zone_id": "yellow_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        },
+        {
+          "episode": 2,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/episodes/episode_002/catalog.json",
+          "scenario": "red_to_green",
+          "instruction": "put the red block in the green zone",
+          "object_id": "red_block",
+          "zone_id": "green_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        },
+        {
+          "episode": 2,
+          "catalog_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/causal_explore/causal_system_eval_v1_smoke/causal/episodes/episode_002/catalog.json",
+          "scenario": "blue_to_yellow",
+          "instruction": "put the blue block in the yellow zone",
+          "object_id": "blue_block",
+          "zone_id": "yellow_zone",
+          "selected_skills": [
+            "observe",
+            "pick",
+            "place"
+          ],
+          "inserted_probe": false
+        }
+      ]
+    }
+  ]
+}

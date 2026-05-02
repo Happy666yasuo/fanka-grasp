@@ -1,0 +1,12 @@
+{
+  "skill": "place",
+  "algorithm": "sac",
+  "seed": 7,
+  "total_timesteps": 10000,
+  "run_dir": "C:\\Users\\DELL\\OneDrive - 南京大学\\桌面\\大创\\projects\\embodied_agent\\outputs\\training\\place\\20260415_203629_formal_place_baseline_v1",
+  "final_model_path": "C:\\Users\\DELL\\OneDrive - 南京大学\\桌面\\大创\\projects\\embodied_agent\\outputs\\training\\place\\20260415_203629_formal_place_baseline_v1\\final_model.zip",
+  "policy_manifest_path": "C:\\Users\\DELL\\OneDrive - 南京大学\\桌面\\大创\\projects\\embodied_agent\\outputs\\training\\place\\20260415_203629_formal_place_baseline_v1\\policy_manifest.json",
+  "best_model_path": "C:\\Users\\DELL\\OneDrive - 南京大学\\桌面\\大创\\projects\\embodied_agent\\outputs\\training\\place\\20260415_203629_formal_place_baseline_v1\\best_model\\best_model.zip",
+  "best_policy_manifest_path": "C:\\Users\\DELL\\OneDrive - 南京大学\\桌面\\大创\\projects\\embodied_agent\\outputs\\training\\place\\20260415_203629_formal_place_baseline_v1\\best_policy_manifest.json",
+  "success_curve_path": "C:\\Users\\DELL\\OneDrive - 南京大学\\桌面\\大创\\projects\\embodied_agent\\outputs\\training\\place\\20260415_203629_formal_place_baseline_v1\\success_rate_curve.png"
+}

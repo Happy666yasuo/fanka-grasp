@@ -1,0 +1,43 @@
+algo: sac
+skill: place
+seed: 7
+total_timesteps: 30000
+output_root: outputs
+policy: MlpPolicy
+
+expert_episodes: 500
+expert_noise_std: 0.0
+expert_pretrain_steps: 3000
+
+env:
+  object_name: red_block
+  zone_name: green_zone
+  max_steps: 32
+  action_scale: 0.03
+  action_repeat: 12
+  randomize: false
+  seed: 7
+  use_staging: false
+  post_release_settle_steps: 3
+  reset_source: post_pick_states
+  post_pick_states_jsonl: ../../outputs/datasets/red_to_green_post_pick_filtered_v1.jsonl
+
+algo_kwargs:
+  learning_rate: 0.0003
+  buffer_size: 100000
+  learning_starts: 100
+  batch_size: 128
+  gamma: 0.99
+  tau: 0.005
+  train_freq: 1
+  gradient_steps: 1
+  ent_coef: 0.01
+  policy_kwargs:
+    net_arch:
+      - 128
+      - 128
+
+eval:
+  episodes: 20
+  eval_freq: 1000
+  deterministic: true

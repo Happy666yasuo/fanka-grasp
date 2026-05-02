@@ -1,74 +1,56 @@
-# ===== Python =====
+# Python caches and build outputs
 __pycache__/
 *.py[cod]
 *$py.class
 *.egg-info/
 *.egg
-dist/
 build/
+dist/
 *.so
 
-# ===== Training artifacts (logs/) =====
-# Keep log directory structure, exclude heavy model files
-**/logs/**/*.zip
-**/logs/**/*.onnx
-**/logs/**/*.pt
-**/logs/**/*.pth
-**/logs/**/tb_logs/
-**/logs/**/wandb/
+# Test and tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
 
-# Checkpoints dir placeholder only
-**/checkpoints/*.zip
-**/checkpoints/*.pt
+# Local agent/runtime state
+.ralph/
+.codex
+.claude/
+.agents/
 
-# ===== Sim2Sim ONNX: ALLOW tracking =====
-# policy_franka_grasp.onnx is the deployment artifact, should be tracked
-# (no blanket *.onnx exclusion)
-
-# ===== Other large binary =====
-*.npz
-*.pt
-*.pth
-
-# ===== IsaacSim / IsaacLab =====
-*.usd
-*.usda
-*.usdc
-
-# ===== IDE =====
+# IDE and OS local state
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-
-# ===== OS =====
 .DS_Store
 Thumbs.db
 
-# ===== Large directories not part of franka-grasp project =====
-beyondmimic/
-hello.txt
-
-# ===== PDF / binary docs =====
-*.pdf
-
-# ===== Conda / venv =====
+# Environments
 .venv/
 .conda/
+venv/
 
-# ===== MuJoCo Menagerie: exclude mesh assets + non-essential docs =====
-**/franka_emika_panda/assets/
-**/franka_emika_panda/CHANGELOG.md
-**/franka_emika_panda/LICENSE
-**/franka_emika_panda/README.md
-**/franka_emika_panda/scene.xml
-**/franka_emika_panda/mjx_*.xml
-**/franka_emika_panda/panda_nohand.xml
-
-# ===== TensorBoard event files (smoke tests) =====
+# Training/checkpoint artifacts
+*.zip
+*.pt
+*.pth
+*.onnx
+*.npz
+**/logs/**/tb_logs/
+**/logs/**/wandb/
 **/logs/**/events.out.tfevents.*
-**/logs/**/eval_results.txt
-my_practice/franka_cube_grasp/sim2sim/franka_emika_panda/mjx_*
-my_practice/franka_cube_grasp/sim2sim/franka_emika_panda/panda_nohand.xml
-my_practice/franka_cube_grasp/sim2sim/franka_emika_panda/panda.png
+
+# Isaac/MuJoCo heavyweight assets
+*.usd
+*.usda
+*.usdc
+
+# Temporary files
+tmp/
+temp/

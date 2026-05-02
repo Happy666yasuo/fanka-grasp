@@ -1,0 +1,15 @@
+{
+  "skill": "pick",
+  "algorithm": "bc",
+  "seed": 7,
+  "epochs": 300,
+  "expert_stats": {
+    "n_episodes": 2000.0,
+    "n_transitions": 12046.0,
+    "success_rate": 0.917,
+    "mean_reward": 20.328932301075703
+  },
+  "best_success_rate": 0.98,
+  "best_epoch": 110,
+  "run_dir": "C:\\Users\\DELL\\OneDrive - 南京大学\\桌面\\大创\\projects\\embodied_agent\\outputs\\training\\pick\\20260415_231730_bc_pick_random_v1"
+}

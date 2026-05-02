@@ -1,0 +1,94 @@
+{
+  "run_id": "causal_system_eval_v1_smoke_curiosity_ep002",
+  "scene_id": "scene_causal_system_eval_v1_smoke_curiosity_ep002",
+  "object_id": "red_block",
+  "probe_action": "lateral_push",
+  "contact_region": "side_center",
+  "before_position": [
+    0.5489397309453802,
+    0.10271039913554628,
+    0.645
+  ],
+  "after_position": [
+    0.5996135348065252,
+    0.26481112502517096,
+    0.6449896850702995
+  ],
+  "displacement_xy": 0.16983662659067694,
+  "before_world_state": {
+    "instruction": "probe red_block",
+    "object_positions": {
+      "red_block": [
+        0.5489397309453802,
+        0.10271039913554628,
+        0.645
+      ],
+      "blue_block": [
+        0.6420906400755296,
+        0.0017668389693355976,
+        0.645
+      ]
+    },
+    "zone_positions": {
+      "green_zone": [
+        0.5,
+        -0.1,
+        0.623
+      ],
+      "yellow_zone": [
+        0.42,
+        0.14,
+        0.623
+      ],
+      "blue_zone": [
+        0.65,
+        0.13,
+        0.623
+      ]
+    },
+    "end_effector_position": [
+      0.2938053011894226,
+      -0.003246255684643984,
+      0.5497581362724304
+    ],
+    "held_object_name": null
+  },
+  "after_world_state": {
+    "instruction": "probe red_block",
+    "object_positions": {
+      "red_block": [
+        0.5996135348065252,
+        0.26481112502517096,
+        0.6449896850702995
+      ],
+      "blue_block": [
+        0.6420906241232333,
+        0.0017714261579988176,
+        0.6449899999902309
+      ]
+    },
+    "zone_positions": {
+      "green_zone": [
+        0.5,
+        -0.1,
+        0.623
+      ],
+      "yellow_zone": [
+        0.42,
+        0.14,
+        0.623
+      ],
+      "blue_zone": [
+        0.65,
+        0.13,
+        0.623
+      ]
+    },
+    "end_effector_position": [
+      0.5706450939178467,
+      0.09648751467466354,
+      0.6895784139633179
+    ],
+    "held_object_name": null
+  }
+}

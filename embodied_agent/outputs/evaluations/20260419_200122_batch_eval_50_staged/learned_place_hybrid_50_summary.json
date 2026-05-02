@@ -1,0 +1,19 @@
+{
+  "name": "learned_place_hybrid_50",
+  "episodes": 50,
+  "success_rate": 0.32,
+  "mean_goal_distance_xy": 0.1924755006091751,
+  "fallback_to_scripted": false,
+  "learned_skills": {
+    "place": {
+      "skill_name": "place",
+      "algorithm": "sac",
+      "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260419_190903_place_release_regression_v1/best_model/best_model.zip",
+      "max_steps": 16,
+      "action_repeat": 12,
+      "action_scale": 0.015,
+      "deterministic": true,
+      "use_staging": true
+    }
+  }
+}

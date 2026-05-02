@@ -1,0 +1,8 @@
+{
+  "algorithm": "bc",
+  "model_path": "best_policy.pt",
+  "max_steps": 20,
+  "action_repeat": 60,
+  "action_scale": 0.04,
+  "deterministic": true
+}

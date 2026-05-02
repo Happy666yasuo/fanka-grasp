@@ -1,0 +1,38 @@
+{
+  "name": "learned_pick_multi_object_smoke",
+  "episodes": 12,
+  "success_rate": 0.5,
+  "mean_goal_distance_xy": 0.15117004606854398,
+  "fallback_to_scripted": false,
+  "task_pool_size": 3,
+  "learned_skills": {
+    "pick": {
+      "skill_name": "pick",
+      "algorithm": "sac",
+      "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_164442_smoke_pick_mainline_regression_retry/best_model/best_model.zip",
+      "max_steps": 20,
+      "action_repeat": 30,
+      "action_scale": 0.04,
+      "deterministic": true,
+      "use_staging": true
+    }
+  },
+  "recovery": {
+    "mean_replan_count": 0.5,
+    "max_replan_count": 1,
+    "episodes_with_replan": 6,
+    "successful_recovery_episodes": 0,
+    "recovery_success_rate": 0.0,
+    "episodes_with_step_failures": 6,
+    "total_step_failures": 12,
+    "failure_source_counts": {
+      "execution_error": 12
+    },
+    "failure_action_counts": {
+      "pick": 12
+    },
+    "recovery_policy_counts": {
+      "retry_pick_then_continue": 6
+    }
+  }
+}

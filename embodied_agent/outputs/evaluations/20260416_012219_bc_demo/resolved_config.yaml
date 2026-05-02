@@ -1,0 +1,11 @@
+output_root: outputs
+experiments:
+- name: bc_pick_demo
+  instruction: put the red block in the green zone
+  episodes: 3
+  randomize: false
+  seed: 7
+  fallback_to_scripted: true
+  skills:
+    pick:
+      manifest_path: ../../outputs/training/pick/20260415_222132_bc_pick_v1/best_policy_manifest.json

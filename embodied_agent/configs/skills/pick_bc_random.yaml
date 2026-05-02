@@ -1,0 +1,24 @@
+algo: bc
+skill: pick
+seed: 7
+epochs: 300
+output_root: outputs
+
+expert_episodes: 2000
+expert_noise_std: 0.05
+
+batch_size: 256
+learning_rate: 0.001
+hidden: [128, 128]
+eval_freq: 10
+eval_episodes: 50
+
+env:
+  object_name: red_block
+  zone_name: green_zone
+  max_steps: 20
+  action_scale: 0.04
+  action_repeat: 60
+  randomize: true
+  seed: 7
+  use_staging: true

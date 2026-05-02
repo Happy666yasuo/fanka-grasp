@@ -1,0 +1,20 @@
+{
+  "name": "scripted_baseline_20",
+  "episodes": 20,
+  "success_rate": 1.0,
+  "mean_goal_distance_xy": 2.2871807790049184e-05,
+  "fallback_to_scripted": true,
+  "learned_skills": {},
+  "recovery": {
+    "mean_replan_count": 0,
+    "max_replan_count": 0,
+    "episodes_with_replan": 0,
+    "successful_recovery_episodes": 0,
+    "recovery_success_rate": 0.0,
+    "episodes_with_step_failures": 0,
+    "total_step_failures": 0,
+    "failure_source_counts": {},
+    "failure_action_counts": {},
+    "recovery_policy_counts": {}
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "algorithm": "sac",
+  "total_timesteps": 50000,
+  "wall_time_seconds": 108.1,
+  "seed": 42,
+  "randomize": false,
+  "staging": true,
+  "env_kwargs": {
+    "randomize": false,
+    "use_staging": true,
+    "max_steps": 20,
+    "action_scale": 0.04,
+    "action_repeat": 30
+  },
+  "best_success_rate": 1.0,
+  "best_step": 2000,
+  "eval_log": [
+    {
+      "timestep": 2000,
+      "success_rate": 1.0,
+      "mean_reward": 225.26
+    }
+  ],
+  "run_dir": "C:\\Users\\DELL\\OneDrive - 南京大学\\桌面\\大创\\projects\\embodied_agent\\project_RL\\outputs\\rl_training\\20260416_010639_sac_v3_earlystop"
+}

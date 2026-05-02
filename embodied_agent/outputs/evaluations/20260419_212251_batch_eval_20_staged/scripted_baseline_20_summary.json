@@ -1,0 +1,26 @@
+{
+  "name": "scripted_baseline_20",
+  "episodes": 20,
+  "success_rate": 0.0,
+  "mean_goal_distance_xy": 0.17997769025426205,
+  "fallback_to_scripted": true,
+  "learned_skills": {},
+  "recovery": {
+    "mean_replan_count": 1,
+    "max_replan_count": 1,
+    "episodes_with_replan": 20,
+    "successful_recovery_episodes": 0,
+    "recovery_success_rate": 0.0,
+    "episodes_with_step_failures": 20,
+    "total_step_failures": 40,
+    "failure_source_counts": {
+      "post_condition_failed": 40
+    },
+    "failure_action_counts": {
+      "pick": 40
+    },
+    "recovery_policy_counts": {
+      "retry_pick_then_continue": 20
+    }
+  }
+}

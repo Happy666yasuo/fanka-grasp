@@ -1,0 +1,14 @@
+{
+  "version": "sim_catalog_v1",
+  "run_id": "sim_catalog_v1_smoke",
+  "scene_id": "scene_sim_0001",
+  "object_manifest_path": "manifests/scene_sim_0001.json",
+  "objects": {
+    "red_block": {
+      "artifact_path": "artifacts/red_block.json"
+    },
+    "blue_block": {
+      "artifact_path": "artifacts/blue_block.json"
+    }
+  }
+}

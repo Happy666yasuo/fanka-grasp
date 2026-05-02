@@ -1,0 +1,47 @@
+algo: sac
+skill: place
+seed: 7
+total_timesteps: 20000
+output_root: outputs
+policy: MlpPolicy
+
+expert_episodes: 200
+expert_noise_std: 0.0
+expert_pretrain_steps: 1000
+
+bc_init:
+  manifest_path: ../../outputs/training/place/20260415_231800_bc_place_v1/best_policy_manifest.json
+  log_std: -2.5
+
+env:
+  object_name: red_block
+  zone_name: green_zone
+  max_steps: 32
+  action_scale: 0.03
+  action_repeat: 12
+  randomize: false
+  seed: 7
+  use_staging: false
+  post_release_settle_steps: 3
+  reset_source: post_pick_states
+  post_pick_states_jsonl: ../../outputs/datasets/red_to_green_post_pick_curated_v2.jsonl
+
+algo_kwargs:
+  learning_rate: 0.0003
+  buffer_size: 100000
+  learning_starts: 0
+  batch_size: 64
+  gamma: 0.99
+  tau: 0.005
+  train_freq: 1
+  gradient_steps: 1
+  ent_coef: 0.01
+  policy_kwargs:
+    net_arch:
+      - 128
+      - 128
+
+eval:
+  episodes: 20
+  eval_freq: 1000
+  deterministic: true

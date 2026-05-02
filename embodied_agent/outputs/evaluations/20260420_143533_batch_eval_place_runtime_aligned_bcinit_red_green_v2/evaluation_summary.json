@@ -1,0 +1,98 @@
+{
+  "experiments": [
+    {
+      "name": "runtime_aligned_bcinit_red_green_v2_staged_50",
+      "episodes": 50,
+      "success_rate": 0.5,
+      "mean_goal_distance_xy": 0.08813579045858809,
+      "fallback_to_scripted": false,
+      "task_pool_size": 1,
+      "learned_skills": {
+        "place": {
+          "skill_name": "place",
+          "algorithm": "sac",
+          "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_143112_bcinit_red_green_v2/best_model/best_model.zip",
+          "max_steps": 32,
+          "action_repeat": 12,
+          "action_scale": 0.03,
+          "deterministic": true,
+          "use_staging": true
+        }
+      },
+      "recovery": {
+        "mean_replan_count": 0.5,
+        "max_replan_count": 1,
+        "episodes_with_replan": 25,
+        "successful_recovery_episodes": 0,
+        "recovery_success_rate": 0.0,
+        "episodes_with_step_failures": 25,
+        "total_step_failures": 50,
+        "failure_source_counts": {
+          "execution_error": 50
+        },
+        "failure_action_counts": {
+          "place": 50
+        },
+        "recovery_policy_counts": {
+          "repick_then_place": 25
+        }
+      },
+      "runtime_alignment": {
+        "episodes_with_post_pick_states": 50,
+        "episodes_with_place_entry_states": 50,
+        "stage_counts": {
+          "post_pick_success": 75,
+          "pre_place_runtime_raw": 75,
+          "pre_place_policy_entry": 75
+        }
+      }
+    },
+    {
+      "name": "runtime_aligned_bcinit_red_green_v2_raw_50",
+      "episodes": 50,
+      "success_rate": 0.36,
+      "mean_goal_distance_xy": 0.11093534222632237,
+      "fallback_to_scripted": false,
+      "task_pool_size": 1,
+      "learned_skills": {
+        "place": {
+          "skill_name": "place",
+          "algorithm": "sac",
+          "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_143112_bcinit_red_green_v2/best_model/best_model.zip",
+          "max_steps": 32,
+          "action_repeat": 12,
+          "action_scale": 0.03,
+          "deterministic": true,
+          "use_staging": false
+        }
+      },
+      "recovery": {
+        "mean_replan_count": 0.72,
+        "max_replan_count": 1,
+        "episodes_with_replan": 36,
+        "successful_recovery_episodes": 4,
+        "recovery_success_rate": 0.1111111111111111,
+        "episodes_with_step_failures": 36,
+        "total_step_failures": 68,
+        "failure_source_counts": {
+          "execution_error": 68
+        },
+        "failure_action_counts": {
+          "place": 68
+        },
+        "recovery_policy_counts": {
+          "repick_then_place": 36
+        }
+      },
+      "runtime_alignment": {
+        "episodes_with_post_pick_states": 50,
+        "episodes_with_place_entry_states": 50,
+        "stage_counts": {
+          "post_pick_success": 86,
+          "pre_place_runtime_raw": 86,
+          "pre_place_policy_entry": 86
+        }
+      }
+    }
+  ]
+}

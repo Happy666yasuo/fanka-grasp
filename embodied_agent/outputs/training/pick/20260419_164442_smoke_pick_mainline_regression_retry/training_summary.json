@@ -1,0 +1,15 @@
+{
+  "skill": "pick",
+  "algorithm": "sac",
+  "seed": 7,
+  "total_timesteps": 2000,
+  "run_dir": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_164442_smoke_pick_mainline_regression_retry",
+  "final_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_164442_smoke_pick_mainline_regression_retry/final_model.zip",
+  "policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_164442_smoke_pick_mainline_regression_retry/policy_manifest.json",
+  "best_model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_164442_smoke_pick_mainline_regression_retry/best_model/best_model.zip",
+  "best_policy_manifest_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_164442_smoke_pick_mainline_regression_retry/best_policy_manifest.json",
+  "success_curve_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/pick/20260419_164442_smoke_pick_mainline_regression_retry/success_rate_curve.png",
+  "best_success_rate": 1.0,
+  "best_mean_reward": 224.64854495029073,
+  "expert_warmstart": null
+}

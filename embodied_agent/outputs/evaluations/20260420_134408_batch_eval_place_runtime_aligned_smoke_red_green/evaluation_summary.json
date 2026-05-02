@@ -1,0 +1,99 @@
+{
+  "experiments": [
+    {
+      "name": "runtime_aligned_smoke_staged_red_green_50",
+      "episodes": 50,
+      "success_rate": 0.0,
+      "mean_goal_distance_xy": 0.24703392918267797,
+      "fallback_to_scripted": false,
+      "task_pool_size": 1,
+      "learned_skills": {
+        "place": {
+          "skill_name": "place",
+          "algorithm": "sac",
+          "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_133954_runtime_aligned_smoke_20260420/best_model/best_model.zip",
+          "max_steps": 16,
+          "action_repeat": 12,
+          "action_scale": 0.015,
+          "deterministic": true,
+          "use_staging": true
+        }
+      },
+      "recovery": {
+        "mean_replan_count": 1,
+        "max_replan_count": 1,
+        "episodes_with_replan": 50,
+        "successful_recovery_episodes": 0,
+        "recovery_success_rate": 0.0,
+        "episodes_with_step_failures": 50,
+        "total_step_failures": 100,
+        "failure_source_counts": {
+          "execution_error": 100
+        },
+        "failure_action_counts": {
+          "place": 100
+        },
+        "recovery_policy_counts": {
+          "retry_place_only": 50
+        }
+      },
+      "runtime_alignment": {
+        "episodes_with_post_pick_states": 50,
+        "episodes_with_place_entry_states": 50,
+        "stage_counts": {
+          "post_pick_success": 50,
+          "pre_place_runtime_raw": 100,
+          "pre_place_policy_entry": 100
+        }
+      }
+    },
+    {
+      "name": "runtime_aligned_smoke_raw_red_green_50",
+      "episodes": 50,
+      "success_rate": 0.0,
+      "mean_goal_distance_xy": 0.25175591032401584,
+      "fallback_to_scripted": false,
+      "task_pool_size": 1,
+      "learned_skills": {
+        "place": {
+          "skill_name": "place",
+          "algorithm": "sac",
+          "model_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/training/place/20260420_133954_runtime_aligned_smoke_20260420/best_model/best_model.zip",
+          "max_steps": 16,
+          "action_repeat": 12,
+          "action_scale": 0.015,
+          "deterministic": true,
+          "use_staging": false
+        }
+      },
+      "recovery": {
+        "mean_replan_count": 1,
+        "max_replan_count": 1,
+        "episodes_with_replan": 50,
+        "successful_recovery_episodes": 0,
+        "recovery_success_rate": 0.0,
+        "episodes_with_step_failures": 50,
+        "total_step_failures": 100,
+        "failure_source_counts": {
+          "execution_error": 100
+        },
+        "failure_action_counts": {
+          "place": 100
+        },
+        "recovery_policy_counts": {
+          "retry_place_only": 34,
+          "repick_then_place": 16
+        }
+      },
+      "runtime_alignment": {
+        "episodes_with_post_pick_states": 50,
+        "episodes_with_place_entry_states": 50,
+        "stage_counts": {
+          "post_pick_success": 66,
+          "pre_place_runtime_raw": 100,
+          "pre_place_policy_entry": 100
+        }
+      }
+    }
+  ]
+}

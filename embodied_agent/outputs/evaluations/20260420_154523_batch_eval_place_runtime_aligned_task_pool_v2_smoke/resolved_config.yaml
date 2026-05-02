@@ -1,0 +1,46 @@
+output_root: outputs
+experiments:
+- name: task_pool_v2_smoke_staged_12
+  episodes: 12
+  randomize: true
+  seed: 7
+  fallback_to_scripted: false
+  skills:
+    place:
+      manifest_path: ../../outputs/training/place/task_pool_v2_active_best_policy_manifest.json
+      use_staging: true
+  task_pool:
+  - task_id: red_to_green
+    instruction: put the red block in the green zone
+    object_name: red_block
+    zone_name: green_zone
+  - task_id: blue_to_yellow
+    instruction: put the blue block in the yellow zone
+    object_name: blue_block
+    zone_name: yellow_zone
+  - task_id: yellow_to_blue
+    instruction: 把黄色方块放到蓝色区域
+    object_name: yellow_block
+    zone_name: blue_zone
+- name: task_pool_v2_smoke_raw_12
+  episodes: 12
+  randomize: true
+  seed: 7
+  fallback_to_scripted: false
+  skills:
+    place:
+      manifest_path: ../../outputs/training/place/task_pool_v2_active_best_policy_manifest.json
+      use_staging: false
+  task_pool:
+  - task_id: red_to_green
+    instruction: put the red block in the green zone
+    object_name: red_block
+    zone_name: green_zone
+  - task_id: blue_to_yellow
+    instruction: put the blue block in the yellow zone
+    object_name: blue_block
+    zone_name: yellow_zone
+  - task_id: yellow_to_blue
+    instruction: 把黄色方块放到蓝色区域
+    object_name: yellow_block
+    zone_name: blue_zone

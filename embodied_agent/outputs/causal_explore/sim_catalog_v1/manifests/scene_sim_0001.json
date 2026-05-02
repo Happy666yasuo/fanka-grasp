@@ -1,0 +1,31 @@
+{
+  "scene_id": "scene_sim_0001",
+  "source": "simulator_style_fixture",
+  "objects": [
+    {
+      "object_id": "red_block",
+      "object_category": "rigid_block",
+      "initial_pose": [0.55, 0.1, 0.645]
+    },
+    {
+      "object_id": "blue_block",
+      "object_category": "rigid_block",
+      "initial_pose": [0.63, 0.02, 0.645]
+    },
+    {
+      "object_id": "yellow_block",
+      "object_category": "rigid_block",
+      "initial_pose": [0.44, 0.16, 0.645]
+    }
+  ],
+  "zones": [
+    {
+      "zone_name": "green_zone",
+      "pose": [0.7, -0.18, 0.623]
+    },
+    {
+      "zone_name": "yellow_zone",
+      "pose": [0.4, 0.13, 0.623]
+    }
+  ]
+}

@@ -1,0 +1,648 @@
+{
+  "config": {
+    "tasks": [
+      "把红色方块移到绿色区域",
+      "把蓝色方块移到黄色区域"
+    ],
+    "headless": true,
+    "max_replans": 3,
+    "num_conditions": 12,
+    "dimensions": [
+      "explore_strategy",
+      "uncertainty",
+      "recovery"
+    ]
+  },
+  "results": [
+    {
+      "condition_label": "random_U+_R+",
+      "strategy": "random",
+      "use_uncertainty": true,
+      "use_recovery": true,
+      "task": "把红色方块移到绿色区域",
+      "success": true,
+      "total_steps": 4,
+      "explore_steps": 3,
+      "uncertainty_score": 0.55,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.0006669480001164629,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "random_U+_R-",
+      "strategy": "random",
+      "use_uncertainty": true,
+      "use_recovery": false,
+      "task": "把红色方块移到绿色区域",
+      "success": false,
+      "total_steps": 4,
+      "explore_steps": 3,
+      "uncertainty_score": 0.55,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.00016240500008279923,
+      "error": "Step failed without recovery: place",
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "random_U-_R+",
+      "strategy": "random",
+      "use_uncertainty": false,
+      "use_recovery": true,
+      "task": "把红色方块移到绿色区域",
+      "success": true,
+      "total_steps": 4,
+      "explore_steps": 0,
+      "uncertainty_score": 0.55,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.0001411830000961345,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "random_U-_R-",
+      "strategy": "random",
+      "use_uncertainty": false,
+      "use_recovery": false,
+      "task": "把红色方块移到绿色区域",
+      "success": true,
+      "total_steps": 4,
+      "explore_steps": 0,
+      "uncertainty_score": 0.55,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.00013474000002133835,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "curiosity_U+_R+",
+      "strategy": "curiosity",
+      "use_uncertainty": true,
+      "use_recovery": true,
+      "task": "把红色方块移到绿色区域",
+      "success": true,
+      "total_steps": 3,
+      "explore_steps": 3,
+      "uncertainty_score": 0.4000000000000001,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.00012822200005757622,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "curiosity_U+_R-",
+      "strategy": "curiosity",
+      "use_uncertainty": true,
+      "use_recovery": false,
+      "task": "把红色方块移到绿色区域",
+      "success": true,
+      "total_steps": 3,
+      "explore_steps": 3,
+      "uncertainty_score": 0.4000000000000001,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.00013186599994696735,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "curiosity_U-_R+",
+      "strategy": "curiosity",
+      "use_uncertainty": false,
+      "use_recovery": true,
+      "task": "把红色方块移到绿色区域",
+      "success": true,
+      "total_steps": 3,
+      "explore_steps": 3,
+      "uncertainty_score": 0.4000000000000001,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.0001248590001523553,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "curiosity_U-_R-",
+      "strategy": "curiosity",
+      "use_uncertainty": false,
+      "use_recovery": false,
+      "task": "把红色方块移到绿色区域",
+      "success": false,
+      "total_steps": 3,
+      "explore_steps": 3,
+      "uncertainty_score": 0.4000000000000001,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.0001197750000301312,
+      "error": "Step failed without recovery: place",
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "causal_explore_U+_R+",
+      "strategy": "causal_explore",
+      "use_uncertainty": true,
+      "use_recovery": true,
+      "task": "把红色方块移到绿色区域",
+      "success": true,
+      "total_steps": 4,
+      "explore_steps": 3,
+      "uncertainty_score": 0.44625,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.0028262000000722765,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "causal_explore_U+_R-",
+      "strategy": "causal_explore",
+      "use_uncertainty": true,
+      "use_recovery": false,
+      "task": "把红色方块移到绿色区域",
+      "success": false,
+      "total_steps": 4,
+      "explore_steps": 3,
+      "uncertainty_score": 0.44625,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.0026610329998675297,
+      "error": "Step failed without recovery: place",
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "causal_explore_U-_R+",
+      "strategy": "causal_explore",
+      "use_uncertainty": false,
+      "use_recovery": true,
+      "task": "把红色方块移到绿色区域",
+      "success": true,
+      "total_steps": 4,
+      "explore_steps": 3,
+      "uncertainty_score": 0.44625,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.002403881000191177,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "causal_explore_U-_R-",
+      "strategy": "causal_explore",
+      "use_uncertainty": false,
+      "use_recovery": false,
+      "task": "把红色方块移到绿色区域",
+      "success": true,
+      "total_steps": 4,
+      "explore_steps": 3,
+      "uncertainty_score": 0.44625,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.0024201590001666773,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "random_U+_R+",
+      "strategy": "random",
+      "use_uncertainty": true,
+      "use_recovery": true,
+      "task": "把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 4,
+      "explore_steps": 3,
+      "uncertainty_score": 0.55,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.00017700400007925055,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "random_U+_R-",
+      "strategy": "random",
+      "use_uncertainty": true,
+      "use_recovery": false,
+      "task": "把蓝色方块移到黄色区域",
+      "success": false,
+      "total_steps": 4,
+      "explore_steps": 3,
+      "uncertainty_score": 0.55,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.00014966100002311578,
+      "error": "Step failed without recovery: pick",
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "random_U-_R+",
+      "strategy": "random",
+      "use_uncertainty": false,
+      "use_recovery": true,
+      "task": "把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 4,
+      "explore_steps": 0,
+      "uncertainty_score": 0.55,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.000137155999937022,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "random_U-_R-",
+      "strategy": "random",
+      "use_uncertainty": false,
+      "use_recovery": false,
+      "task": "把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 4,
+      "explore_steps": 0,
+      "uncertainty_score": 0.55,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.00013642900012200698,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "curiosity_U+_R+",
+      "strategy": "curiosity",
+      "use_uncertainty": true,
+      "use_recovery": true,
+      "task": "把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 3,
+      "explore_steps": 3,
+      "uncertainty_score": 0.4000000000000001,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.00014637999993283302,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "curiosity_U+_R-",
+      "strategy": "curiosity",
+      "use_uncertainty": true,
+      "use_recovery": false,
+      "task": "把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 3,
+      "explore_steps": 3,
+      "uncertainty_score": 0.4000000000000001,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.00014418499995372258,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "curiosity_U-_R+",
+      "strategy": "curiosity",
+      "use_uncertainty": false,
+      "use_recovery": true,
+      "task": "把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 3,
+      "explore_steps": 3,
+      "uncertainty_score": 0.4000000000000001,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.00013260099990475283,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "curiosity_U-_R-",
+      "strategy": "curiosity",
+      "use_uncertainty": false,
+      "use_recovery": false,
+      "task": "把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 3,
+      "explore_steps": 3,
+      "uncertainty_score": 0.4000000000000001,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.0001348739999684767,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "causal_explore_U+_R+",
+      "strategy": "causal_explore",
+      "use_uncertainty": true,
+      "use_recovery": true,
+      "task": "把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 4,
+      "explore_steps": 3,
+      "uncertainty_score": 0.44625,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.0026707660001648037,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "causal_explore_U+_R-",
+      "strategy": "causal_explore",
+      "use_uncertainty": true,
+      "use_recovery": false,
+      "task": "把蓝色方块移到黄色区域",
+      "success": false,
+      "total_steps": 4,
+      "explore_steps": 3,
+      "uncertainty_score": 0.44625,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.002605451999897923,
+      "error": "Step failed without recovery: pick",
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "causal_explore_U-_R+",
+      "strategy": "causal_explore",
+      "use_uncertainty": false,
+      "use_recovery": true,
+      "task": "把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 4,
+      "explore_steps": 3,
+      "uncertainty_score": 0.44625,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.0026937919999454607,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    },
+    {
+      "condition_label": "causal_explore_U-_R-",
+      "strategy": "causal_explore",
+      "use_uncertainty": false,
+      "use_recovery": false,
+      "task": "把蓝色方块移到黄色区域",
+      "success": true,
+      "total_steps": 4,
+      "explore_steps": 3,
+      "uncertainty_score": 0.44625,
+      "replan_count": 0,
+      "recovery_count": 0,
+      "execution_time_seconds": 0.0026585229998090654,
+      "error": null,
+      "plan_actions": [
+        "observe",
+        "probe",
+        "pick",
+        "place"
+      ],
+      "fallback_used": false
+    }
+  ],
+  "summary": {
+    "random_U+_R+": {
+      "num_trials": 2,
+      "success_rate": 1.0,
+      "avg_explore_steps": 3.0,
+      "avg_uncertainty": 0.55,
+      "avg_replan_count": 0.0,
+      "avg_recovery_count": 0.0,
+      "avg_execution_time": 0.00042197600009785674
+    },
+    "random_U+_R-": {
+      "num_trials": 2,
+      "success_rate": 0.0,
+      "avg_explore_steps": 3.0,
+      "avg_uncertainty": 0.55,
+      "avg_replan_count": 0.0,
+      "avg_recovery_count": 0.0,
+      "avg_execution_time": 0.0001560330000529575
+    },
+    "random_U-_R+": {
+      "num_trials": 2,
+      "success_rate": 1.0,
+      "avg_explore_steps": 0.0,
+      "avg_uncertainty": 0.55,
+      "avg_replan_count": 0.0,
+      "avg_recovery_count": 0.0,
+      "avg_execution_time": 0.00013916950001657824
+    },
+    "random_U-_R-": {
+      "num_trials": 2,
+      "success_rate": 1.0,
+      "avg_explore_steps": 0.0,
+      "avg_uncertainty": 0.55,
+      "avg_replan_count": 0.0,
+      "avg_recovery_count": 0.0,
+      "avg_execution_time": 0.00013558450007167266
+    },
+    "curiosity_U+_R+": {
+      "num_trials": 2,
+      "success_rate": 1.0,
+      "avg_explore_steps": 3.0,
+      "avg_uncertainty": 0.4000000000000001,
+      "avg_replan_count": 0.0,
+      "avg_recovery_count": 0.0,
+      "avg_execution_time": 0.00013730099999520462
+    },
+    "curiosity_U+_R-": {
+      "num_trials": 2,
+      "success_rate": 1.0,
+      "avg_explore_steps": 3.0,
+      "avg_uncertainty": 0.4000000000000001,
+      "avg_replan_count": 0.0,
+      "avg_recovery_count": 0.0,
+      "avg_execution_time": 0.00013802549995034497
+    },
+    "curiosity_U-_R+": {
+      "num_trials": 2,
+      "success_rate": 1.0,
+      "avg_explore_steps": 3.0,
+      "avg_uncertainty": 0.4000000000000001,
+      "avg_replan_count": 0.0,
+      "avg_recovery_count": 0.0,
+      "avg_execution_time": 0.00012873000002855406
+    },
+    "curiosity_U-_R-": {
+      "num_trials": 2,
+      "success_rate": 0.5,
+      "avg_explore_steps": 3.0,
+      "avg_uncertainty": 0.4000000000000001,
+      "avg_replan_count": 0.0,
+      "avg_recovery_count": 0.0,
+      "avg_execution_time": 0.00012732449999930395
+    },
+    "causal_explore_U+_R+": {
+      "num_trials": 2,
+      "success_rate": 1.0,
+      "avg_explore_steps": 3.0,
+      "avg_uncertainty": 0.44625,
+      "avg_replan_count": 0.0,
+      "avg_recovery_count": 0.0,
+      "avg_execution_time": 0.00274848300011854
+    },
+    "causal_explore_U+_R-": {
+      "num_trials": 2,
+      "success_rate": 0.0,
+      "avg_explore_steps": 3.0,
+      "avg_uncertainty": 0.44625,
+      "avg_replan_count": 0.0,
+      "avg_recovery_count": 0.0,
+      "avg_execution_time": 0.0026332424998827264
+    },
+    "causal_explore_U-_R+": {
+      "num_trials": 2,
+      "success_rate": 1.0,
+      "avg_explore_steps": 3.0,
+      "avg_uncertainty": 0.44625,
+      "avg_replan_count": 0.0,
+      "avg_recovery_count": 0.0,
+      "avg_execution_time": 0.002548836500068319
+    },
+    "causal_explore_U-_R-": {
+      "num_trials": 2,
+      "success_rate": 1.0,
+      "avg_explore_steps": 3.0,
+      "avg_uncertainty": 0.44625,
+      "avg_replan_count": 0.0,
+      "avg_recovery_count": 0.0,
+      "avg_execution_time": 0.0025393409999878713
+    }
+  }
+}

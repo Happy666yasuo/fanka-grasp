@@ -1,0 +1,7 @@
+{
+  "version": "mock_registry_v1",
+  "objects": {
+    "red_block": "artifacts/red_block.json",
+    "blue_block": "artifacts/blue_block.json"
+  }
+}

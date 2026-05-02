@@ -1,0 +1,9 @@
+output_root: outputs
+experiments:
+- name: scripted_baseline
+  instruction: put the red block in the green zone
+  episodes: 5
+  randomize: true
+  seed: 7
+  fallback_to_scripted: true
+  skills: {}

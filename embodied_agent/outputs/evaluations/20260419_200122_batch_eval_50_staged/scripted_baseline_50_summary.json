@@ -1,0 +1,8 @@
+{
+  "name": "scripted_baseline_50",
+  "episodes": 50,
+  "success_rate": 1.0,
+  "mean_goal_distance_xy": 2.2706127795188856e-05,
+  "fallback_to_scripted": true,
+  "learned_skills": {}
+}

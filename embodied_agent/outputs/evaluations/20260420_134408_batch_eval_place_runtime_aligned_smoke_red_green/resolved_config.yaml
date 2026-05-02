@@ -1,0 +1,30 @@
+output_root: outputs
+experiments:
+- name: runtime_aligned_smoke_staged_red_green_50
+  episodes: 50
+  randomize: true
+  seed: 7
+  fallback_to_scripted: false
+  skills:
+    place:
+      manifest_path: ../../outputs/training/place/20260420_133954_runtime_aligned_smoke_20260420/best_policy_manifest.json
+      use_staging: true
+  task_pool:
+  - task_id: red_to_green
+    instruction: put the red block in the green zone
+    object_name: red_block
+    zone_name: green_zone
+- name: runtime_aligned_smoke_raw_red_green_50
+  episodes: 50
+  randomize: true
+  seed: 7
+  fallback_to_scripted: false
+  skills:
+    place:
+      manifest_path: ../../outputs/training/place/20260420_133954_runtime_aligned_smoke_20260420/best_policy_manifest.json
+      use_staging: false
+  task_pool:
+  - task_id: red_to_green
+    instruction: put the red block in the green zone
+    object_name: red_block
+    zone_name: green_zone

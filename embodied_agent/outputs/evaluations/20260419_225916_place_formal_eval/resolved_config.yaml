@@ -1,0 +1,14 @@
+output_root: outputs
+experiments:
+- name: place_fixed_50
+  skill: place
+  episodes: 50
+  randomize: false
+  seed: 7
+  manifest_path: ../../outputs/training/place/20260419_190903_place_release_regression_v1/best_policy_manifest.json
+- name: place_random_50
+  skill: place
+  episodes: 50
+  randomize: true
+  seed: 7
+  manifest_path: ../../outputs/training/place/20260419_190903_place_release_regression_v1/best_policy_manifest.json

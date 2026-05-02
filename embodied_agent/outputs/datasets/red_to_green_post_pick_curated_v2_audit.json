@@ -1,0 +1,95 @@
+{
+  "output_path": "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/datasets/red_to_green_post_pick_curated_v2.jsonl",
+  "source_paths": [
+    "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/evaluations/20260420_131259_batch_eval_50_place_runtime_alignment/learned_place_runtime_alignment_raw_entry_50_post_pick_states.jsonl",
+    "/home/happywindman/Desktop/beyondmimic/my_new_practice/大创/projects/embodied_agent/outputs/evaluations/20260420_131259_batch_eval_50_place_runtime_alignment/learned_place_runtime_alignment_staged_50_post_pick_states.jsonl"
+  ],
+  "filters": {
+    "capture_stage": "post_pick_success",
+    "object_name": "red_block",
+    "zone_name": "green_zone",
+    "min_object_height": 0.705,
+    "lift_progress_range": [
+      0.065,
+      0.09
+    ],
+    "object_zone_distance_xy_range": [
+      0.35,
+      0.6
+    ],
+    "max_ee_object_distance": 0.16,
+    "min_held_local_z": 0.08
+  },
+  "counts": {
+    "total_records": 175,
+    "kept_records": 7,
+    "experiment::learned_place_runtime_alignment_raw_entry_50": 4,
+    "capture_index::2": 7,
+    "experiment::learned_place_runtime_alignment_staged_50": 3
+  },
+  "unique_records": [
+    {
+      "experiment": "learned_place_runtime_alignment_raw_entry_50",
+      "episode": 6,
+      "capture_index": 2,
+      "object_zone_distance_xy": 0.43987401682602534,
+      "lift_progress": 0.07073656080000024,
+      "ee_object_distance": 0.09616085883138271,
+      "held_local_z": 0.08997178077697754
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_raw_entry_50",
+      "episode": 15,
+      "capture_index": 2,
+      "object_zone_distance_xy": 0.5596637300402726,
+      "lift_progress": 0.0758059805870056,
+      "ee_object_distance": 0.10162451905664802,
+      "held_local_z": 0.08520996570587158
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_raw_entry_50",
+      "episode": 33,
+      "capture_index": 2,
+      "object_zone_distance_xy": 0.5596637300402726,
+      "lift_progress": 0.0758059805870056,
+      "ee_object_distance": 0.10162451905664802,
+      "held_local_z": 0.08520996570587158
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_raw_entry_50",
+      "episode": 36,
+      "capture_index": 2,
+      "object_zone_distance_xy": 0.5596637300402726,
+      "lift_progress": 0.0758059805870056,
+      "ee_object_distance": 0.10162451905664802,
+      "held_local_z": 0.08520996570587158
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_staged_50",
+      "episode": 21,
+      "capture_index": 2,
+      "object_zone_distance_xy": 0.48229655055622783,
+      "lift_progress": 0.08131897990242831,
+      "ee_object_distance": 0.0906478859965894,
+      "held_local_z": 0.09044891595840454
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_staged_50",
+      "episode": 27,
+      "capture_index": 2,
+      "object_zone_distance_xy": 0.41933286493764,
+      "lift_progress": 0.08777492785405205,
+      "ee_object_distance": 0.082476480629813,
+      "held_local_z": 0.08193939924240112
+    },
+    {
+      "experiment": "learned_place_runtime_alignment_staged_50",
+      "episode": 39,
+      "capture_index": 2,
+      "object_zone_distance_xy": 0.5694442211116696,
+      "lift_progress": 0.0891557520866394,
+      "ee_object_distance": 0.12258925335785308,
+      "held_local_z": 0.08232402801513672
+    }
+  ]
+}
