@@ -16,13 +16,29 @@ if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
 from embodied_agent.simulator import create_pick_place_simulation
+from embodied_agent.isaaclab_simulator import IsaacLabPickPlaceSimulation
 
 
 class SimulatorMultiObjectTests(unittest.TestCase):
     def test_factory_uses_backend_environment_default(self) -> None:
         with patch.dict(os.environ, {"EMBODIED_SIM_BACKEND": "isaaclab"}):
-            with self.assertRaisesRegex(RuntimeError, "IsaacLab"):
+            with self.assertRaisesRegex(RuntimeError, "PickPlaceSimulationProtocol"):
                 create_pick_place_simulation(gui=False)
+
+    def test_isaaclab_skeleton_exposes_contract_without_runtime_imports(self) -> None:
+        before_modules = set(sys.modules)
+        simulation = IsaacLabPickPlaceSimulation(allow_unconfigured=True)
+        after_modules = set(sys.modules)
+        summary = simulation.contract_summary()
+
+        self.assertEqual(simulation.backend_name, "isaaclab")
+        self.assertIn("object_pose", summary["observations"])
+        self.assertIn("delta_position", summary["actions"])
+        self.assertIn("failure_history", summary["results"])
+        self.assertNotIn("isaaclab", after_modules - before_modules)
+
+        with self.assertRaisesRegex(NotImplementedError, "not runnable"):
+            simulation.reset()
 
     def test_factory_explicit_backend_overrides_environment_default(self) -> None:
         with patch.dict(os.environ, {"EMBODIED_SIM_BACKEND": "isaaclab"}):

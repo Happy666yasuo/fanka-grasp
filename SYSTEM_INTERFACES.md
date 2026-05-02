@@ -75,6 +75,18 @@ IsaacLab adapter contract:
 - IsaacLab will own high-throughput RL training and robot dynamics.
 - It must implement the same observation/action semantics as MuJoCo before replacing any training path.
 - MuJoCo remains the current sim2sim/sim2real validation backend until IsaacLab parity tests exist.
+- The adapter must expose object pose, zone pose, end-effector pose, held object, skill action delta, gripper command, and executor-style episode result fields.
+- The registered `isaaclab` backend must fail explicitly while unimplemented; it must not silently fallback to MuJoCo or launch IsaacLab GUI during unit tests.
+
+Minimum IsaacLab parity gate before training use:
+
+```text
+same instruction
+  -> same object_name / zone_name
+  -> same observation keys
+  -> same action arguments
+  -> same success/error/failure_history result shape
+```
 
 ## 2. CausalExplore Output
 

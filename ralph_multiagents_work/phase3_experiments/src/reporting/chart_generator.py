@@ -62,6 +62,10 @@ class ChartGenerator:
 
         return paths
 
+    def _chart_path(self, experiment_type: str, stem: str) -> str:
+        prefix = experiment_type if experiment_type in {"comparative", "ablation"} else "experiment"
+        return str(self.output_dir / f"{prefix}_{stem}.png")
+
     def _detect_type(self) -> str:
         config = self.data.get("config", {})
         if "dimensions" in config:
@@ -87,7 +91,7 @@ class ChartGenerator:
         ax.grid(axis="y", alpha=0.3)
         fig.tight_layout()
 
-        path = str(self.output_dir / "success_rate_comparison.png")
+        path = self._chart_path(experiment_type, "success_rate_comparison")
         fig.savefig(path)
         plt.close(fig)
         return path
@@ -107,7 +111,7 @@ class ChartGenerator:
         ax.grid(axis="y", alpha=0.3)
         fig.tight_layout()
 
-        path = str(self.output_dir / "explore_steps_distribution.png")
+        path = self._chart_path(experiment_type, "explore_steps_distribution")
         fig.savefig(path)
         plt.close(fig)
         return path
@@ -148,7 +152,7 @@ class ChartGenerator:
         ax.grid(axis="y", alpha=0.3)
         fig.tight_layout()
 
-        path = str(self.output_dir / "uncertainty_descent.png")
+        path = self._chart_path(experiment_type, "uncertainty_descent")
         fig.savefig(path)
         plt.close(fig)
         return path
@@ -162,7 +166,7 @@ class ChartGenerator:
         ax.grid(axis="y", alpha=0.3)
         fig.tight_layout()
 
-        path = str(self.output_dir / "planning_quality_comparison.png")
+        path = self._chart_path("comparative", "planning_quality_comparison")
         fig.savefig(path)
         plt.close(fig)
         return path
@@ -195,7 +199,7 @@ class ChartGenerator:
         fig.suptitle("Ablation Experiment: Replan & Recovery Analysis")
         fig.tight_layout()
 
-        path = str(self.output_dir / "replan_recovery_comparison.png")
+        path = self._chart_path("ablation", "replan_recovery_comparison")
         fig.savefig(path)
         plt.close(fig)
         return path

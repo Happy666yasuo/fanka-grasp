@@ -193,6 +193,7 @@ class TestChartGenerator(unittest.TestCase):
         for p in paths:
             self.assertTrue(os.path.exists(p))
             self.assertTrue(p.endswith(".png"))
+            self.assertIn("comparative_", os.path.basename(p))
 
     def test_generate_ablation_charts(self):
         input_file = self._write_json("test.json", ABLATION_JSON)
@@ -201,3 +202,21 @@ class TestChartGenerator(unittest.TestCase):
         self.assertGreaterEqual(len(paths), 3)
         for p in paths:
             self.assertTrue(os.path.exists(p))
+            self.assertIn("ablation_", os.path.basename(p))
+
+    def test_comparative_and_ablation_chart_names_do_not_overlap(self):
+        comparative_input = self._write_json("comparative.json", COMPARATIVE_JSON)
+        ablation_input = self._write_json("ablation.json", ABLATION_JSON)
+
+        comparative_paths = ChartGenerator(
+            str(comparative_input),
+            output_dir=str(self.tmp_path),
+        ).generate_all()
+        ablation_paths = ChartGenerator(
+            str(ablation_input),
+            output_dir=str(self.tmp_path),
+        ).generate_all()
+
+        comparative_names = {os.path.basename(path) for path in comparative_paths}
+        ablation_names = {os.path.basename(path) for path in ablation_paths}
+        self.assertTrue(comparative_names.isdisjoint(ablation_names))

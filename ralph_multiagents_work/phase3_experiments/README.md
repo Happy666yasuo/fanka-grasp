@@ -33,10 +33,10 @@ phase3_experiments/
 │   │   └── chart_generator.py         # matplotlib 图表生成
 │   └── demo/                  # 最终 Demo
 │       └── final_demo.py             # 完整闭环演示脚本
-├── tests/                     # 63 单元/集成/验收测试
+├── tests/                     # 65 单元/集成/验收测试
 └── outputs/                   # 实验产出
     ├── experiments/           # 实验 JSON + artifact catalog
-    ├── reports/               # Markdown 报告 + PNG 图表
+    ├── reports/               # Markdown 报告 + comparative/ablation 前缀 PNG 图表
     └── paper/                 # 论文材料
         ├── paper_draft.md
         ├── presentation_outline.md
@@ -65,7 +65,7 @@ python -m unittest discover tests -v
 - simulator_backed 已覆盖蓝/黄非默认目标对象，不再因只创建默认 `red_block` 而失败。
 - 若在线 probe 失败，结果仍会记录 `fallback_used=true` 和 `error`，并不得伪装为 simulator-backed 成功。
 
-说明：`outputs/experiments/comparative_results.json` 是静态实验产物；正式论文前应重新运行并刷新 JSON/图表。
+说明：`outputs/experiments/comparative_results.json` 是 2026-05-03 MuJoCo 刷新后的静态实验产物；正式论文前如再次改动 backend 或任务池，应重新运行并刷新 JSON/图表。
 
 ### 消融实验（3 维度 × 12 条件）
 | 维度 | 取值 |
